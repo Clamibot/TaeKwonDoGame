@@ -174,10 +174,10 @@ public class GUI extends Thread {
             public void mouseClicked(MouseEvent e) {
                 contentPane.removeAll();
                 displaywindow.remove(contentPane);
-                cont.add(new White1().Wh());
+                cont.add(new White1());
                 displaywindow.add(cont);
                 displaywindow.pack();
-                Main.dis.Wh();
+//                Main.dis.Wh();
 //                Main.display.DisplayKata1();
             }
         });
@@ -460,7 +460,7 @@ public class GUI extends Thread {
         // Clear the previous scene and prep for the new one
         //  PrepForKataFrame("Steps For Kata Kee-Cho:");
         contentPane.removeAll();
-        contentPane.add(new White1().Wh());
+        contentPane.add(new White1());
         //     displaywindow.add(contentPane);
         //      displaywindow.add(new White1().Wh());
         //       displaywindow.repaint();

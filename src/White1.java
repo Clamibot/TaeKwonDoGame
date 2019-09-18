@@ -14,7 +14,7 @@ public class White1 extends javax.swing.JPanel {
         initComponents();
     }
 
-    public JPanel Wh() {
+    /*public void Wh() {
         JPanel q = new JPanel();
         q.add(jButton1);
         q.add(jButton2);
@@ -33,8 +33,8 @@ public class White1 extends javax.swing.JPanel {
         q.add(jLabel11);
         System.out.println("I Have been called");
         q.repaint();
-        return q;
-    }
+     //   return q;
+    }*/
 
     /* ATEMPT AT MAIN 
     public void main(String args[]) {
@@ -139,7 +139,6 @@ public class White1 extends javax.swing.JPanel {
         gridBagConstraints.gridwidth = 25;
         gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
         gridBagConstraints.ipadx = 29;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.insets = new java.awt.Insets(18, 91, 0, 0);
         add(jLabel1, gridBagConstraints);
 
