@@ -227,7 +227,6 @@ public class GUI extends Thread {
 		// Clear the previous scene and prep for the new one
 		contentPane.removeAll();
 
-
 		// Move the text output box
 		output.setBounds(490, 520, 645, 50);
 
@@ -449,42 +448,42 @@ public class GUI extends Thread {
 	
 		// List the steps with some parts missing
 		JLabel step1 = new JLabel(
-				"1. Step Into A ____ Side Fighting Stance Facing Your Left, Say ___, And Do A _______ Punch.");
+				"1. Step Into A ____ Side Fighting Stance Facing Your Left, Say ___, And Do A _______ Punch.");//Answers: left, kia, reverse
 		step1.setFont(contentFont);
 		step1.setBounds(760, 50, 640, 20);
-		JLabel step2 = new JLabel("2. Step Into A ____ Side Fighting Stance Facing Your Right And Do A _______ Punch.");
+		JLabel step2 = new JLabel("2. Step Into A ____ Side Fighting Stance Facing Your Right And Do A _______ Punch.");///Answers: right, reverse
 		step2.setFont(contentFont);
 		step2.setBounds(760, 75, 640, 20);
-		JLabel step3 = new JLabel("3. Step Into A ____ Side Fighting Stance Facing The Front And Do A _______ Punch.");
+		JLabel step3 = new JLabel("3. Step Into A ____ Side Fighting Stance Facing The Front And Do A _______ Punch.");//Answers: left, reverse
 		step3.setFont(contentFont);
 		step3.setBounds(760, 100, 640, 20);
-		JLabel step4 = new JLabel("4. Step Into A ____ Side Fighting Stance Facing The Back And Do A _______ Punch.");
+		JLabel step4 = new JLabel("4. Step Into A ____ Side Fighting Stance Facing The Back And Do A _______ Punch.");//Answers: right, reverse
 		step4.setFont(contentFont);
 		step4.setBounds(760, 125, 640, 20);
-		JLabel step5 = new JLabel("5. Say ___ After The Reverse Punch.");
+		JLabel step5 = new JLabel("5. Say ___ After The Reverse Punch.");//Answer: kia
 		step5.setFont(contentFont);
 		step5.setBounds(760, 150, 640, 20);
 		JLabel step6 = new JLabel(
-				"6. Step Into A ____ Side Fighting Stance Facing Your Left, Do A _____ Kick, Then A _______ Punch.");
+				"6. Step Into A ____ Side Fighting Stance Facing Your Left, Do A _____ Kick, Then A _______ Punch.");//Answers: left, front, reverse
 		step6.setFont(contentFont);
 		step6.setBounds(760, 175, 640, 20);
 		JLabel step7 = new JLabel(
-				"7. Step Into A ____ Side Fighting Stance Facing Your Right, Do A _____ Kick, Then A _______ Punch.");
+				"7. Step Into A ____ Side Fighting Stance Facing Your Right, Do A _____ Kick, Then A _______ Punch.");//Answers: right, front, reverse
 		step7.setFont(contentFont);
 		step7.setBounds(760, 200, 740, 20);
 		JLabel step8 = new JLabel(
-				"8. Step Into A ____ Side Fighting Stance Facing The Back, Do A _____ Kick, Then A _______ Punch.");
+				"8. Step Into A ____ Side Fighting Stance Facing The Back, Do A _____ Kick, Then A _______ Punch.");//Answers: left, front, reverse
 		step8.setFont(contentFont);
 		step8.setBounds(760, 225, 660, 20);
 		JLabel step9 = new JLabel(
-				"9. Step Into A ____ Side Fighting Stance Facing The Front, Do A ________ _____ Kick, Then A _______ Punch.");
+				"9. Step Into A ____ Side Fighting Stance Facing The Front, Do A ________ _____ Kick, Then A _______ Punch.");//Answers: right, slide-up front, reverse
 		step9.setFont(contentFont);
 		step9.setBounds(760, 250, 740, 20);
 		JLabel step10 = new JLabel(
-				"10. Step Into A ____ Side Fighting Stance Facing The Back, Do A ________ _____ Kick, Then A _______ Punch.");
+				"10. Step Into A ____ Side Fighting Stance Facing The Back, Do A ________ _____ Kick, Then A _______ Punch.");//Answers: left, slide-up front, reverse
 		step10.setFont(contentFont);
 		step10.setBounds(760, 275, 740, 20);
-		JLabel step11 = new JLabel("11. Step Into A ____ Side Fighting Stance Facing The Front And Say ___.");
+		JLabel step11 = new JLabel("11. Step Into A ____ Side Fighting Stance Facing The Front And Say ___.");//Answers: right, kia
 		step11.setFont(contentFont);
 		step11.setBounds(760, 300, 640, 20);
 
@@ -513,7 +512,7 @@ public class GUI extends Thread {
 
 		// List the steps with some parts missing
 		JLabel step1 = new JLabel(
-				"1. Fold For A ___ Block, Step Into A ____ Side Forebalance Facing Your Left, Do A ___ Block, And Say ___.");
+				"1. Fold For A ___ Block, Step Into A ____ Side Forebalance Facing Your Left, Do A ___ Block, And Say ___.");//Answers: low, left, low, kia
 		step1.setFont(contentFont);
 		step1.setBounds(780, 50, 720, 20);
 		JLabel step2 = new JLabel(
@@ -521,7 +520,7 @@ public class GUI extends Thread {
 		step2.setFont(contentFont);
 		step2.setBounds(780, 75, 720, 20);
 		JLabel step3 = new JLabel(
-				"3. Fold For A ___ Block, Step Into A ____ Side Forebalance Facing Your Right, And Do A ___ Block.");
+				"3. Fold For A ___ Block, Step Into A ____ Side Forebalance Facing Your Right, And Do A ___ Block.");//Answers: low, right, low
 		step3.setFont(contentFont);
 		step3.setBounds(780, 100, 720, 20);
 		JLabel step4 = new JLabel(
@@ -1204,6 +1203,159 @@ public class GUI extends Thread {
 	public void DisplayKata8() {
 		// Clear the previous the new one scene and prep for the new one
 		PrepForKataFrame("Steps For Kata Tai-Gei:");
+                
+                // List the steps with some parts missing
+		JLabel step1 = new JLabel("1. Go into position for the kata.");
+		step1.setFont(contentFont);
+		step1.setBounds(780, 50, 620, 20);
+		JLabel step2 = new JLabel("2. Step out towards your left, do a _____ block, and say ___.");
+		step2.setFont(contentFont);
+		step2.setBounds(780, 70, 620, 20);
+		JLabel step3 = new JLabel("3. Do a _____ kick, step forward, and do another palm strike with the right hand.");
+		step3.setFont(contentFont);
+		step3.setBounds(780, 90, 620, 20);
+		JLabel step4 = new JLabel("4. With the same hand, turn 180 degrees to the right and do a palm strike");
+		step4.setFont(contentFont);
+		step4.setBounds(780, 110, 620, 20);
+		JLabel step5 = new JLabel("5. Do a _____ kick, step forward, and do another palm strike with the left hand.");
+		step5.setFont(contentFont);
+		step5.setBounds(780, 130, 620, 20);
+		JLabel step6 = new JLabel("6. ______ block into a left side fighting stance facing the front.");
+		step6.setFont(contentFont);
+		step6.setBounds(780, 150, 620, 20);
+		JLabel step7 = new JLabel("7. Reach with the front hand and step over into a left side forebalance.");
+		step7.setFont(contentFont);
+		step7.setBounds(780, 170, 620, 20);
+		JLabel step8 = new JLabel("8. Do a ______ elbow.");
+		step8.setFont(contentFont);
+		step8.setBounds(780, 190, 620, 20);
+		JLabel step9 = new JLabel("9. Step forward into a ______ block in a right side fighting stance.");
+		step9.setFont(contentFont);
+		step9.setBounds(780, 210, 620, 20);
+		JLabel step10 = new JLabel("10. Reach with the front hand and step over into a right side forebalance.");
+		step10.setFont(contentFont);
+		step10.setBounds(780, 230, 620, 20);
+		JLabel step11 = new JLabel("11. Do a ______ elbow.");
+		step11.setFont(contentFont);
+		step11.setBounds(780, 250, 620, 20);
+		JLabel step12 = new JLabel(
+				"12. Step forward and do a double punch, then step forward and do a double palm strike.");
+		step12.setFont(contentFont);
+		step12.setBounds(780, 270, 620, 20);
+		JLabel step13 = new JLabel("13. Say ___.");
+		step13.setFont(contentFont);
+		step13.setBounds(780, 290, 620, 20);
+		JLabel step14 = new JLabel("14. Fold for a cross block and turn 270 degrees towards your left.");
+		step14.setFont(contentFont);
+		step14.setBounds(780, 310, 620, 20);
+		JLabel step15 = new JLabel("15. Do a cross block in a ____ side forebalance.");
+		step15.setFont(contentFont);
+		step15.setBounds(780, 330, 620, 20);
+		JLabel step16 = new JLabel("16. Shrink it to a ____ side fighting stance, then do a backfist.");
+		step16.setFont(contentFont);
+		step16.setBounds(780, 350, 620, 20);
+		JLabel step17 = new JLabel(
+				"17. Step out into a ____ side forebalance, wrap with the front arm, then do a _______ punch.");
+		step17.setFont(contentFont);
+		step17.setBounds(780, 370, 620, 20);
+		JLabel step18 = new JLabel("18. Do a backfist in a _____ side fighting stance facing the right.");
+		step18.setFont(contentFont);
+		step18.setBounds(780, 390, 620, 20);
+		JLabel step19 = new JLabel(
+				"19. Step out into a ____ side forebalance, wrap with the front arm, then do a _______ punch.");
+		step19.setFont(contentFont);
+		step19.setBounds(780, 410, 620, 20);
+		JLabel step20 = new JLabel("20. Fold for a Tsong-Su block.");
+		step20.setFont(contentFont);
+		step20.setBounds(780, 430, 620, 20);
+		JLabel step21 = new JLabel(
+				"21. Slide your feet together, step out into a ____ side forebalance, then do a ________ block.");
+		step21.setFont(contentFont);
+		step21.setBounds(780, 450, 620, 20);
+		JLabel step22 = new JLabel("22. Step up into a Yokh-Jeen block, then step into a horse stance and punch.");
+		step22.setFont(contentFont);
+		step22.setBounds(780, 470, 620, 20);
+		JLabel step23 = new JLabel("23. Do a comearound ____ kick, land in a Tsong-Su block.");
+		step23.setFont(contentFont);
+		step23.setBounds(780, 490, 620, 20);
+		JLabel step24 = new JLabel("24. Step up into a Yokh-Jeen block, then step into a horse stance and punch.");
+		step24.setFont(contentFont);
+		step24.setBounds(780, 510, 620, 20);
+		JLabel step25 = new JLabel("25. Do another comearound side kick and land in a ______ block.");
+		step25.setFont(contentFont);
+		step25.setBounds(780, 530, 620, 20);
+		JLabel step26 = new JLabel("26. Step out into a ____ side forebalance and press.");
+		step26.setFont(contentFont);
+		step26.setBounds(780, 550, 620, 20);
+		JLabel step27 = new JLabel("27. Step forward into a ______ block.");
+		step27.setFont(contentFont);
+		step27.setBounds(780, 570, 620, 20);
+		JLabel step28 = new JLabel("28. Step out into a ____ side forebalance and press.");
+		step28.setFont(contentFont);
+		step28.setBounds(780, 590, 620, 20);
+		JLabel step29 = new JLabel("29. Slide your feet together and turn 90 degrees to your left.");
+		step29.setFont(contentFont);
+		step29.setBounds(780, 610, 620, 20);
+		JLabel step30 = new JLabel("30. Fold for a press with the left hand on bottom and the right hand on top.");
+		step30.setFont(contentFont);
+		step30.setBounds(780, 630, 620, 20);
+		JLabel step31 = new JLabel("31. Step out into a _____ side deep fighting stance and press towards the right.");
+		step31.setFont(contentFont);
+		step31.setBounds(780, 650, 620, 20);
+		JLabel step32 = new JLabel("32. Slide your feet together.");
+		step32.setFont(contentFont);
+		step32.setBounds(780, 670, 620, 20);
+		JLabel step33 = new JLabel("33. Fold for a press with the right hand on bottom and the left hand on top.");
+		step33.setFont(contentFont);
+		step33.setBounds(780, 690, 620, 20);
+		JLabel step34 = new JLabel("34. Step out into a ____ side deep fighting stance and press towards the left.");
+		step34.setFont(contentFont);
+		step34.setBounds(780, 710, 620, 20);
+		JLabel step35 = new JLabel("35. Say ___.");
+		step35.setFont(contentFont);
+		step35.setBounds(780, 730, 620, 20);
+		JLabel step36 = new JLabel("36. Wait 3 seconds, and go back to the position for the kata.");
+		step36.setFont(contentFont);
+		step36.setBounds(780, 750, 620, 20);
+
+		// Add the components to the panel
+		contentPane.add(step1);
+		contentPane.add(step2);
+		contentPane.add(step3);
+		contentPane.add(step4);
+		contentPane.add(step5);
+		contentPane.add(step6);
+		contentPane.add(step7);
+		contentPane.add(step8);
+		contentPane.add(step9);
+		contentPane.add(step10);
+		contentPane.add(step11);
+		contentPane.add(step12);
+		contentPane.add(step13);
+		contentPane.add(step14);
+		contentPane.add(step15);
+		contentPane.add(step16);
+		contentPane.add(step17);
+		contentPane.add(step18);
+		contentPane.add(step19);
+		contentPane.add(step20);
+		contentPane.add(step21);
+		contentPane.add(step22);
+		contentPane.add(step23);
+		contentPane.add(step24);
+		contentPane.add(step25);
+		contentPane.add(step26);
+		contentPane.add(step27);
+		contentPane.add(step28);
+		contentPane.add(step29);
+		contentPane.add(step30);
+		contentPane.add(step31);
+		contentPane.add(step32);
+		contentPane.add(step33);
+		contentPane.add(step34);
+		contentPane.add(step35);
+		contentPane.add(step36);
+		contentPane.repaint();
 	}
 
 	/**
