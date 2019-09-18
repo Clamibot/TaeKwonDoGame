@@ -165,6 +165,8 @@ public class GUI extends Thread {
 		white_belt_button.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+                               // test1 t = new test1();
+                             //  t.t1();
 				Main.display.DisplayKata1();
 			}
 		});
@@ -445,7 +447,7 @@ public class GUI extends Thread {
 	public void DisplayKata1() {
 		// Clear the previous scene and prep for the new one
 		PrepForKataFrame("Steps For Kata Kee-Cho:");
-	
+                
 		// List the steps with some parts missing
 		JLabel step1 = new JLabel(
 				"1. Step Into A ____ Side Fighting Stance Facing Your Left, Say ____, And Do A _______ Punch.");//Answers: left, kia, reverse

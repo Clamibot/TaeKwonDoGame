@@ -16,11 +16,15 @@ public class test1 extends javax.swing.JPanel {
     public test1() {
         initComponents();
     }
-
-    /* ATEMPT AT MAIN */
-    public void main(String args[]) {
+    
+    public void t1() {
         initComponents();
     }
+
+    /* ATEMPT AT MAIN 
+    public void main(String args[]) {
+        initComponents();
+    }*/
     
     /**
      * This method is called from within the constructor to initialize the form.
