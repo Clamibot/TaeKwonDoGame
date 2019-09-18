@@ -46,7 +46,7 @@ public class GUI extends Thread {
 
 	/* Fonts Specifications */
 	// The default font that it is using for the content 
-	Font contentFont = new Font("sansserif", 0 , 14);
+	Font contentFont = new Font("sansserif", 0 , 32);
 	// Font that using for the titles
 	Font titleFont = new Font("sansserif", 0 , 14);	
 
@@ -448,9 +448,9 @@ public class GUI extends Thread {
 	
 		// List the steps with some parts missing
 		JLabel step1 = new JLabel(
-				"1. Step Into A ____ Side Fighting Stance Facing Your Left, Say ___, And Do A _______ Punch.");//Answers: left, kia, reverse
+				"1. Step Into A ____ Side Fighting Stance Facing Your Left, Say ____, And Do A _______ Punch.");//Answers: left, kia, reverse
 		step1.setFont(contentFont);
-		step1.setBounds(760, 50, 640, 20);
+		step1.setBounds(15, 150, 1000, 250);
 		JLabel step2 = new JLabel("2. Step Into A ____ Side Fighting Stance Facing Your Right And Do A _______ Punch.");///Answers: right, reverse
 		step2.setFont(contentFont);
 		step2.setBounds(760, 75, 640, 20);
