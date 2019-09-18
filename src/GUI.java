@@ -181,7 +181,12 @@ public class GUI extends Thread {
         gold_belt_button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                Main.display.DisplayKata2();
+                contentPane.removeAll();
+                displaywindow.remove(contentPane);
+                cont.add(new Gold1());
+                displaywindow.add(cont);
+                displaywindow.pack();
+//                Main.display.DisplayKata2();
             }
         });
         orange_belt_button.addMouseListener(new MouseAdapter() {
