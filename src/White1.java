@@ -47,6 +47,8 @@ public class White1 extends javax.swing.JPanel {
         jLabel12 = new javax.swing.JLabel();
         jProgressBar1 = new javax.swing.JProgressBar();
 
+        setMaximumSize(new java.awt.Dimension(2400, 1000));
+        setMinimumSize(new java.awt.Dimension(1600, 900));
         setLayout(new java.awt.GridBagLayout());
 
         jButton1.setBackground(new java.awt.Color(0, 240, 240));
