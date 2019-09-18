@@ -1,24 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+import javax.swing.JPanel;
+
 
 /**
  *
- * @author School
+ * @author MasterWard
  */
-public class test1 extends javax.swing.JPanel {
+
+public class White1 extends javax.swing.JPanel {
 
     /**
      * Creates new form test1
      */
-    public test1() {
+    public White1() {
         initComponents();
     }
-    
-    public void t1() {
-        initComponents();
+    public JPanel Wh() {
+        JPanel q = new JPanel();
+        q.add(jButton1);
+        System.out.println("I Have been called");
+        q.repaint();
+        return q;
     }
 
     /* ATEMPT AT MAIN 
