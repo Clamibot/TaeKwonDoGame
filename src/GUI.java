@@ -18,7 +18,6 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import org.netbeans.lib.awtextra.AbsoluteLayout;
 
 /**
  * This class is the game's graphics engine. Each graphics instance gets its own
@@ -177,8 +176,6 @@ public class GUI extends Thread {
                 cont.add(new White1());
                 displaywindow.add(cont);
                 displaywindow.pack();
-//                Main.dis.Wh();
-//                Main.display.DisplayKata1();
             }
         });
         gold_belt_button.addMouseListener(new MouseAdapter() {
@@ -293,10 +290,7 @@ public class GUI extends Thread {
         // Update the screen
         contentPane.add(output);
         contentPane.add(main_menu_button);
-//        contentPane.add(movebank);
         contentPane.add(title);
-//        contentPane.repaint();
-        //       output.setText("Complete The Kata.");
     }
 
     /**
@@ -457,13 +451,8 @@ public class GUI extends Thread {
      * This method displays the graphics for completing kata kee-cho
      */
     public void DisplayKata1() {
-        // Clear the previous scene and prep for the new one
-        //  PrepForKataFrame("Steps For Kata Kee-Cho:");
         contentPane.removeAll();
         contentPane.add(new White1());
-        //     displaywindow.add(contentPane);
-        //      displaywindow.add(new White1().Wh());
-        //       displaywindow.repaint();
         contentPane.repaint();
 
         // List the steps with some parts missing
@@ -506,22 +495,6 @@ public class GUI extends Thread {
         JLabel step11 = new JLabel("11. Step Into A ____ Side Fighting Stance Facing The Front And Say ___.");//Answers: right, kia
         step11.setFont(contentFont);
         step11.setBounds(760, 300, 640, 20);
-        /*
-        // Add the components to the panel
-        contentPane.setFont(contentFont);
-        contentPane.add(step1);
-        contentPane.add(step2);
-        contentPane.add(step3);
-        contentPane.add(step4);
-        contentPane.add(step5);
-        contentPane.add(step6);
-        contentPane.add(step7);
-        contentPane.add(step8);
-        contentPane.add(step9);
-        contentPane.add(step10);
-        contentPane.add(step11);
-        contentPane.repaint();
-         */
     }
 
     /**

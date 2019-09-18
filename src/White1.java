@@ -14,27 +14,6 @@ public class White1 extends javax.swing.JPanel {
         initComponents();
     }
 
-    /*public void Wh() {
-        JPanel q = new JPanel();
-        q.add(jButton1);
-        q.add(jButton2);
-        q.add(jButton3);
-        q.add(jButton4);
-        q.add(jLabel1);
-        q.add(jLabel2);
-        q.add(jLabel3);
-        q.add(jLabel4);
-        q.add(jLabel5);
-        q.add(jLabel6);
-        q.add(jLabel7);
-        q.add(jLabel8);
-        q.add(jLabel9);
-        q.add(jLabel10);
-        q.add(jLabel11);
-        System.out.println("I Have been called");
-        q.repaint();
-     //   return q;
-    }*/
 
     /* ATEMPT AT MAIN 
     public void main(String args[]) {
