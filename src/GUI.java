@@ -3,6 +3,8 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
@@ -16,6 +18,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import org.netbeans.lib.awtextra.AbsoluteLayout;
 
 /**
  * This class is the game's graphics engine. Each graphics instance gets its own
@@ -27,7 +30,8 @@ public class GUI extends Thread {
 
     private int done;
     public JTextField output;
-    public JPanel contentPane = new JPanel(null);
+    public JPanel contentPane = new JPanel(new BorderLayout());
+    public JPanel cont = new JPanel(new GridBagLayout());
     public JFrame displaywindow = new JFrame();
     public JFrame messages = new JFrame("JOptionPane showMessageDialog example");
 
@@ -168,10 +172,13 @@ public class GUI extends Thread {
         white_belt_button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                JPanel t = new White1();
-     //           t.repaint();
-//                Main.dis.t1();
-                Main.display.DisplayKata1();
+                contentPane.removeAll();
+                displaywindow.remove(contentPane);
+                cont.add(new White1().Wh());
+                displaywindow.add(cont);
+                displaywindow.pack();
+                Main.dis.Wh();
+//                Main.display.DisplayKata1();
             }
         });
         gold_belt_button.addMouseListener(new MouseAdapter() {
@@ -289,7 +296,7 @@ public class GUI extends Thread {
 //        contentPane.add(movebank);
         contentPane.add(title);
 //        contentPane.repaint();
- //       output.setText("Complete The Kata.");
+        //       output.setText("Complete The Kata.");
     }
 
     /**
@@ -449,11 +456,15 @@ public class GUI extends Thread {
     /**
      * This method displays the graphics for completing kata kee-cho
      */
-    
     public void DisplayKata1() {
         // Clear the previous scene and prep for the new one
-        PrepForKataFrame("Steps For Kata Kee-Cho:");
+        //  PrepForKataFrame("Steps For Kata Kee-Cho:");
+        contentPane.removeAll();
         contentPane.add(new White1().Wh());
+        //     displaywindow.add(contentPane);
+        //      displaywindow.add(new White1().Wh());
+        //       displaywindow.repaint();
+        contentPane.repaint();
 
         // List the steps with some parts missing
         JLabel step1 = new JLabel(
@@ -495,7 +506,7 @@ public class GUI extends Thread {
         JLabel step11 = new JLabel("11. Step Into A ____ Side Fighting Stance Facing The Front And Say ___.");//Answers: right, kia
         step11.setFont(contentFont);
         step11.setBounds(760, 300, 640, 20);
-
+        /*
         // Add the components to the panel
         contentPane.setFont(contentFont);
         contentPane.add(step1);
@@ -510,9 +521,9 @@ public class GUI extends Thread {
         contentPane.add(step10);
         contentPane.add(step11);
         contentPane.repaint();
+         */
     }
-    
-    
+
     /**
      * This method displays the graphics for completing kata chun-g
      */
