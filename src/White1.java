@@ -12,13 +12,50 @@ public class White1 extends javax.swing.JPanel {
     private int index = 0; // Index of answers on
     private int current = 0; // Current word guessed
     private boolean correct = false; // If red or not
+    private String options[] = {" ", "Reverse", "Left", "Right", "Kia"}; // The options to choose
 
     /**
      * Creates new form test1
      */
     public White1() {
         initComponents();
-        jTextField1.setBackground(Color.YELLOW);
+//        jTextField1.setBackground(Color.YELLOW);
+    }
+
+    /* Create a method that deals with all of this */
+    private void paintingNew() {
+        switch (index) {
+            case 0:
+                jTextField1.setText(options[current]);
+                jTextField1.setBackground(getColor());
+                break;
+            case 1:
+                jTextField2.setText(options[current]);
+                jTextField2.setBackground(getColor());
+                break;
+            case 2:
+                jTextField3.setText(options[current]);
+                jTextField3.setBackground(getColor());
+                break;
+            case 3:
+                jTextField4.setText(options[current]);
+                jTextField4.setBackground(getColor());
+                break;
+            default:
+                System.out.println("FUCK YOU BROKE IT. I AM NOT THERE YET");
+        }
+    }
+
+    private Color getColor() {
+        if (correct) {
+            correct = false;
+            index++;
+            return Color.GREEN;
+        } else if (current == 0) {
+            return Color.YELLOW;
+        } else {
+            return Color.RED;
+        }
     }
 
     /**
@@ -29,6 +66,7 @@ public class White1 extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         Reverse1 = new javax.swing.JButton();
         Left2 = new javax.swing.JButton();
@@ -48,11 +86,18 @@ public class White1 extends javax.swing.JPanel {
         jLabel12 = new javax.swing.JLabel();
         jProgressBar1 = new javax.swing.JProgressBar();
         jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jTextField7 = new javax.swing.JTextField();
+        jTextField8 = new javax.swing.JTextField();
 
         setMaximumSize(new java.awt.Dimension(2400, 1000));
         setMinimumSize(new java.awt.Dimension(1600, 900));
         setName("White Belt"); // NOI18N
-        setLayout(null);
+        setLayout(new java.awt.GridBagLayout());
 
         Reverse1.setBackground(new java.awt.Color(0, 240, 240));
         Reverse1.setText("Reverse");
@@ -71,8 +116,15 @@ public class White1 extends javax.swing.JPanel {
                 Reverse1ActionPerformed(evt);
             }
         });
-        add(Reverse1);
-        Reverse1.setBounds(36, 59, 196, 47);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.ipadx = 117;
+        gridBagConstraints.ipady = 22;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(24, 36, 0, 0);
+        add(Reverse1, gridBagConstraints);
 
         Left2.setText("Left");
         Left2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -85,8 +137,15 @@ public class White1 extends javax.swing.JPanel {
                 Left2ActionPerformed(evt);
             }
         });
-        add(Left2);
-        Left2.setBounds(313, 59, 196, 47);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.ipadx = 143;
+        gridBagConstraints.ipady = 22;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(24, 34, 0, 0);
+        add(Left2, gridBagConstraints);
 
         Right3.setText("Right");
         Right3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -94,8 +153,15 @@ public class White1 extends javax.swing.JPanel {
                 Right3MouseClicked(evt);
             }
         });
-        add(Right3);
-        Right3.setBounds(652, 59, 206, 47);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 9;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 77;
+        gridBagConstraints.ipadx = 145;
+        gridBagConstraints.ipady = 22;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(24, 42, 0, 0);
+        add(Right3, gridBagConstraints);
 
         Kia4.setText("Kia");
         Kia4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -103,80 +169,245 @@ public class White1 extends javax.swing.JPanel {
                 Kia4MouseClicked(evt);
             }
         });
-        add(Kia4);
-        Kia4.setBounds(984, 59, 147, 47);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 105;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 212;
+        gridBagConstraints.ipadx = 98;
+        gridBagConstraints.ipady = 22;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(24, 12, 0, 469);
+        add(Kia4, gridBagConstraints);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setText("1. Step Into A ______ Side Fighting Stance Facing Your Left, Say ______, And Do A ______ Punch.");
-        add(jLabel1);
-        jLabel1.setBounds(81, 124, 824, 22);
+        jLabel1.setText("1. Step Into A              Side Fighting Stance Facing Your Left, Say        , And Do A              Punch.");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 104;
+        gridBagConstraints.ipadx = 39;
+        gridBagConstraints.ipady = -2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(64, 90, 0, 0);
+        add(jLabel1, gridBagConstraints);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Word Bank");
-        add(jLabel2);
-        jLabel2.setBounds(523, 13, 87, 22);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 8;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(13, 14, 0, 0);
+        add(jLabel2, gridBagConstraints);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel3.setText("2. Step Into A ______ Side Fighting Stance Facing Your Right And Do A ______ Punch.");
-        add(jLabel3);
-        jLabel3.setBounds(81, 165, 696, 22);
+        jLabel3.setText("2. Step Into A              Side Fighting Stance Facing Your Right And Do A              Punch.");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 43;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 20;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 90, 0, 0);
+        add(jLabel3, gridBagConstraints);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel4.setText("3. Step Into A ______ Side Fighting Stance Facing The Front And Do A ______ Punch.");
-        add(jLabel4);
-        jLabel4.setBounds(81, 205, 690, 22);
+        jLabel4.setText("3. Step Into A              Side Fighting Stance Facing The Front And Do A               Punch.");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridwidth = 64;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 30;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 90, 0, 0);
+        add(jLabel4, gridBagConstraints);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel5.setText("4. Step Into A ______ Side Fighting Stance Facing The Back And Do A ______ Punch.");
-        add(jLabel5);
-        jLabel5.setBounds(81, 245, 686, 22);
+        jLabel5.setText("4. Step Into A              Side Fighting Stance Facing The Back And Do A ______ Punch.");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridwidth = 23;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipady = -2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(28, 90, 0, 0);
+        add(jLabel5, gridBagConstraints);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel6.setText("5. Say ______ After The Reverse Punch.");
-        add(jLabel6);
-        jLabel6.setBounds(81, 285, 321, 22);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 90, 0, 0);
+        add(jLabel6, gridBagConstraints);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel7.setText("6. Step Into A ______ Side Fighting Stance Facing Your Left, Do A ______ Kick, Then A ______ Punch.");
-        add(jLabel7);
-        jLabel7.setBounds(81, 325, 825, 22);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 11;
+        gridBagConstraints.gridwidth = 101;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 90, 0, 0);
+        add(jLabel7, gridBagConstraints);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel8.setText("7. Step Into A ______ Side Fighting Stance Facing Your Right, Do A ______ Kick, Then A ______ Punch.");
-        add(jLabel8);
-        jLabel8.setBounds(81, 365, 836, 22);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 12;
+        gridBagConstraints.gridwidth = 103;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 90, 0, 0);
+        add(jLabel8, gridBagConstraints);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel9.setText("8. Step Into A ______ Side Fighting Stance Facing The Back, Do A ______ Kick, Then A ______ Punch.");
-        add(jLabel9);
-        jLabel9.setBounds(81, 405, 826, 22);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 13;
+        gridBagConstraints.gridwidth = 102;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 90, 0, 0);
+        add(jLabel9, gridBagConstraints);
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel10.setText("9. Step Into A ______ Side Fighting Stance Facing The Front, Do A ______ ______ Kick, Then A ______ Punch.");
-        add(jLabel10);
-        jLabel10.setBounds(81, 445, 896, 22);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 14;
+        gridBagConstraints.gridwidth = 106;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 90, 0, 0);
+        add(jLabel10, gridBagConstraints);
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel11.setText("10. Step Into A ______ Side Fighting Stance Facing The Back, Do A ______ ______ Kick, Then A ______ Punch.");
-        add(jLabel11);
-        jLabel11.setBounds(81, 485, 902, 22);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 15;
+        gridBagConstraints.gridwidth = 211;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 90, 0, 0);
+        add(jLabel11, gridBagConstraints);
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel12.setText("11. Step Into A ______ Side Fighting Stance Facing The Front And Say ______.");
-        add(jLabel12);
-        jLabel12.setBounds(81, 525, 635, 22);
-        add(jProgressBar1);
-        jProgressBar1.setBounds(81, 565, 902, 22);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 16;
+        gridBagConstraints.gridwidth = 11;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 90, 0, 0);
+        add(jLabel12, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 17;
+        gridBagConstraints.gridwidth = 105;
+        gridBagConstraints.ipadx = 892;
+        gridBagConstraints.ipady = 26;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(30, 70, 238, 0);
+        add(jProgressBar1, gridBagConstraints);
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextField1.setText("Left");
+        jTextField1.setEditable(false);
+        jTextField1.setText("Answer1");
+        jTextField1.setMaximumSize(new java.awt.Dimension(100, 100));
+        jTextField1.setMinimumSize(new java.awt.Dimension(10, 22));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
-        add(jTextField1);
-        jTextField1.setBounds(200, 120, 60, 23);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 59;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(64, 210, 0, 0);
+        add(jTextField1, gridBagConstraints);
+
+        jTextField2.setText("jTextField2");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 8;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 104;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(64, 61, 0, 0);
+        add(jTextField2, gridBagConstraints);
+
+        jTextField3.setText("jTextField3");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 22;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 78;
+        gridBagConstraints.ipadx = 94;
+        gridBagConstraints.ipady = -2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(64, 11, 0, 0);
+        add(jTextField3, gridBagConstraints);
+
+        jTextField4.setText("jTextField4");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.ipadx = 34;
+        gridBagConstraints.ipady = -2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 190, 0, 0);
+        add(jTextField4, gridBagConstraints);
+
+        jTextField5.setText("jTextField5");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 10;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 12;
+        gridBagConstraints.ipadx = 63;
+        gridBagConstraints.ipady = -2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 0, 0, 0);
+        add(jTextField5, gridBagConstraints);
+
+        jTextField6.setText("jTextField6");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.ipadx = 63;
+        gridBagConstraints.ipady = -2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 210, 0, 0);
+        add(jTextField6, gridBagConstraints);
+
+        jTextField7.setText("jTextField7");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 10;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridwidth = 12;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 63;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 0, 0, 0);
+        add(jTextField7, gridBagConstraints);
+
+        jTextField8.setText("jTextField8");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.ipadx = 63;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 210, 0, 0);
+        add(jTextField8, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
     private void Reverse1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Reverse1ActionPerformed
@@ -193,8 +424,22 @@ public class White1 extends javax.swing.JPanel {
 
     private void Reverse1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Reverse1MouseClicked
         System.out.println("Clicked reverse when the answer is " + answer[index]);
+        current = 1; // What you choose
         if (answer[index].equals("Reverse")) {
             correct = true;
+//            repaint();
+            index++;
+            current = 0; // Reset to nothing
+        }
+        paintingNew();
+    }//GEN-LAST:event_Reverse1MouseClicked
+
+    private void Left2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Left2MouseClicked
+        System.out.println("Clicked Left when the answer is " + answer[index]);
+        current = 2;
+        if (answer[index].equals("Left")) {
+            correct = true;
+            paintingNew();
             repaint();
             index++;
             correct = false;
@@ -202,49 +447,40 @@ public class White1 extends javax.swing.JPanel {
             current = 0;
             correct = false;
         }
-    }//GEN-LAST:event_Reverse1MouseClicked
-
-    private void Left2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Left2MouseClicked
-        System.out.println("Clicked Left when the answer is " + answer[index]);
-        if (answer[index].equals("Left")) {
-            correct = true;
-            repaint();
-            index++;
-            correct = false;
-        } else {
-            current = 1;
-            correct = false;
-        }
     }//GEN-LAST:event_Left2MouseClicked
 
     private void Right3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Right3MouseClicked
         System.out.println("Clicked Right when the answer is " + answer[index]);
+        current = 3;
         if (answer[index].equals("Right")) {
             correct = true;
+            paintingNew();
             repaint();
             index++;
+            current = 0;
             correct = false;
         } else {
-            current = 2;
             correct = false;
         }
     }//GEN-LAST:event_Right3MouseClicked
 
     private void Kia4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Kia4MouseClicked
         System.out.println("Clicked Kia when the answer is " + answer[index]);
+        current = 3;
         if (answer[index].equals("Kia")) {
             correct = true;
+            paintingNew();
             repaint();
             index++;
+            current = 0;
             correct = false;
         } else {
-            current = 3;
             correct = false;
         }
     }//GEN-LAST:event_Kia4MouseClicked
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // Change the text to the thing on there.
+        // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
 
@@ -267,5 +503,12 @@ public class White1 extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
     // End of variables declaration//GEN-END:variables
 }

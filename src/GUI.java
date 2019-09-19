@@ -28,7 +28,7 @@ public class GUI extends Thread {
 
     private int done;
     public JTextField output;
-    public JPanel contentPane = new JPanel(new BorderLayout());
+    public JPanel contentPane = new JPanel(null);
     public JPanel cont = new JPanel(new GridBagLayout());
     public JFrame displaywindow = new JFrame();
     public JFrame messages = new JFrame("JOptionPane showMessageDialog example");
@@ -65,7 +65,8 @@ public class GUI extends Thread {
                 // Kill all threads and exit
                 try {
                     Main.display.kill();
-                    JOptionPane.showMessageDialog(null, "Thanks For Playing!");
+                 //   JOptionPane.showMessageDialog(null, "Thanks For Playing!"); // Put this CODE BACK IN LATER
+                 // DO NOT DELETE THE CODE ON TOP OF HERE
                     System.exit(0);
                 } catch (Exception closeException) {
                     // Force the program to close if it's being stupid
@@ -507,7 +508,7 @@ public class GUI extends Thread {
     public void DisplayKata2() {
         // Clear the previous scene and prep for the new one
         PrepForKataFrame("Steps For Kata Chun-G:");
-        contentPane.add(new White1());
+        contentPane.add(new Gold1());
         // List the steps with some parts missing
         JLabel step1 = new JLabel(
                 "1. Fold For A ___ Block, Step Into A ____ Side Forebalance Facing Your Left, Do A ___ Block, And Say ___.");//Answers: low, left, low, kia
