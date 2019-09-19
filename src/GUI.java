@@ -182,7 +182,7 @@ public class GUI extends Thread {
             public void mouseClicked(MouseEvent e) {
                 contentPane.removeAll();
                 displaywindow.remove(contentPane);
-                cont.add(new Gold1());
+            //    cont.add(new Gold1());
                 displaywindow.add(cont);
                 displaywindow.pack();
 //                Main.display.DisplayKata2();
@@ -507,7 +507,7 @@ public class GUI extends Thread {
     public void DisplayKata2() {
         // Clear the previous scene and prep for the new one
         PrepForKataFrame("Steps For Kata Chun-G:");
-        contentPane.add(new Gold1());
+     //   contentPane.add(new Gold1());
         // List the steps with some parts missing
         JLabel step1 = new JLabel(
                 "1. Fold For A ___ Block, Step Into A ____ Side Forebalance Facing Your Left, Do A ___ Block, And Say ___.");//Answers: low, left, low, kia
