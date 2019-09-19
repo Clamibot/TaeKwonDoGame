@@ -1,4 +1,5 @@
 
+import java.awt.Color;
 import javax.swing.JPanel;
 
 /**
@@ -17,6 +18,7 @@ public class White1 extends javax.swing.JPanel {
      */
     public White1() {
         initComponents();
+        jTextField1.setBackground(Color.YELLOW);
     }
 
     /**
@@ -49,6 +51,7 @@ public class White1 extends javax.swing.JPanel {
 
         setMaximumSize(new java.awt.Dimension(2400, 1000));
         setMinimumSize(new java.awt.Dimension(1600, 900));
+        setName("White Belt"); // NOI18N
         setLayout(null);
 
         Reverse1.setBackground(new java.awt.Color(0, 240, 240));

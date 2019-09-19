@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagLayout;
-import java.awt.GridLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
@@ -35,8 +34,8 @@ public class GUI extends Thread {
     public JFrame messages = new JFrame("JOptionPane showMessageDialog example");
 
     // Define all buttons here and load images into them if needed
-    private JButton main_menu_button = new JButton();
-    private JButton main_menu_button_menu = new JButton();
+    private final JButton main_menu_button = new JButton();
+    private final JButton main_menu_button_menu = new JButton();
     private JButton white_belt_button = new JButton(new ImageIcon("src/resources/white_belt.jpg"));
     private JButton gold_belt_button = new JButton(new ImageIcon("src/resources/gold_belt.jpg"));
     private JButton orange_belt_button = new JButton(new ImageIcon("src/resources/orange_belt.jpg"));
