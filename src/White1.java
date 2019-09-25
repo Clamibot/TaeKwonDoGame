@@ -1,7 +1,5 @@
 
 import java.awt.Color;
-import java.util.Arrays;
-import javax.swing.JPanel;
 
 /**
  *
@@ -179,6 +177,7 @@ public class White1 extends javax.swing.JPanel {
         setMaximumSize(new java.awt.Dimension(2400, 1000));
         setMinimumSize(new java.awt.Dimension(1600, 900));
         setName("White Belt"); // NOI18N
+        setPreferredSize(new java.awt.Dimension(1600, 900));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Reverse1.setBackground(new java.awt.Color(0, 240, 240));
@@ -327,7 +326,7 @@ public class White1 extends javax.swing.JPanel {
 
         I2.setBackground(new java.awt.Color(240, 240, 240));
         I2.setText("Answer21");
-        add(I2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 490, -1, -1));
+        add(I2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 490, -1, -1));
 
         I3.setBackground(new java.awt.Color(240, 240, 240));
         I3.setText("Answer22");
@@ -369,7 +368,7 @@ public class White1 extends javax.swing.JPanel {
         jTextArea1.setText("1. Step into a              Side Fighting stance facing your left, Say             And Do A             Punch\n\n2. Step into a              Side Fighting Stance Facing Your Right And Do A                Punch.\n\n3. Step Into A              Side Fighting Stance Facing The Front And Do A               Punch.\n\n4. Step Into A              Side Fighting Stance Facing The Back And Do a              Punch.\n\n5. Say                After the Reverse Punch\n\n6. Step Into a               Side Fighting Stance Facing Your Left, do a                Kick, then a               Punch.\n\n7. Step Into a               Side Fighting Stance Facing Your Right, do a               Kick, Then A              Punch.\n\n8. Step Into a               Side Fighting Stance Facing The Back, Do A             Kick, Then A              Punch.\n\n9. Step Into a               Side Fighting Stance Facing The Front, Do A                          Kick, Then A     Punch.\n\n10. Step Into a               Side Fighting Stance Facing The Back, Do A           Kick, Then A                  Punch.\n\n11. Step Into a               Side Fighting Stance Facing The Front And Say              .");
         jScrollPane1.setViewportView(jTextArea1);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 134, 920, 640));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 134, 920, 510));
     }// </editor-fold>//GEN-END:initComponents
 
     private void Reverse1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Reverse1ActionPerformed
