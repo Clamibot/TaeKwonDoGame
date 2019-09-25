@@ -35,6 +35,7 @@ public class White1 extends javax.swing.JPanel {
          * The number is for the order of questions on that line. 1 is first 2
          * second, 3 is third and so on
          */
+        
         A1.setText(options[selection[0]]);
         A1.setBackground(getColor(0));
         A2.setText(options[selection[1]]);
@@ -116,10 +117,10 @@ public class White1 extends javax.swing.JPanel {
      * @return
      */
     private Color getColor(int a) {
-        if (selection[a] == 0) { // Is the next one
-            return Color.YELLOW;
-        } else if (selection[a] == 7) {// Clear ones
+        if (selection[a] == 7) {// Clear ones
             return (new Color(204, 204, 204));
+        } else if (selection[a] == 0) { // Is the next one
+            return Color.YELLOW;
         } else if (selection[a] == answer[a]) { // Right
             return Color.GREEN;
         } else { // Wrong
