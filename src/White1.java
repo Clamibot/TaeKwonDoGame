@@ -175,10 +175,10 @@ public class White1 extends javax.swing.JPanel {
         jTextArea1 = new javax.swing.JTextArea();
 
         setBackground(new java.awt.Color(204, 204, 204));
-        setMaximumSize(new java.awt.Dimension(2400, 1000));
-        setMinimumSize(new java.awt.Dimension(1600, 900));
+        setMaximumSize(new java.awt.Dimension(1620, 920));
+        setMinimumSize(new java.awt.Dimension(1620, 920));
         setName("White Belt"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(1600, 900));
+        setPreferredSize(new java.awt.Dimension(1610, 910));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Reverse1.setBackground(new java.awt.Color(0, 240, 240));
@@ -231,7 +231,7 @@ public class White1 extends javax.swing.JPanel {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Word Bank");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(523, 13, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 13, -1, -1));
 
         A1.setEditable(false);
         A1.setText("Answer1");
@@ -242,11 +242,11 @@ public class White1 extends javax.swing.JPanel {
                 A1ActionPerformed(evt);
             }
         });
-        add(A1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, -1, -1));
+        add(A1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, -1, -1));
 
         A2.setBackground(new java.awt.Color(240, 240, 240));
         A2.setText("Answer2");
-        add(A2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 140, 60, -1));
+        add(A2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 140, 60, -1));
 
         A3.setBackground(new java.awt.Color(240, 240, 240));
         A3.setText("Answer3");
@@ -255,91 +255,91 @@ public class White1 extends javax.swing.JPanel {
                 A3ActionPerformed(evt);
             }
         });
-        add(A3, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 140, -1, 20));
+        add(A3, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 140, -1, 20));
 
         B2.setBackground(new java.awt.Color(240, 240, 240));
         B2.setText("Answer5");
-        add(B2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 180, -1, 20));
+        add(B2, new org.netbeans.lib.awtextra.AbsoluteConstraints(633, 183, -1, 20));
 
         C1.setBackground(new java.awt.Color(240, 240, 240));
         C1.setText("Answer6");
-        add(C1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 70, 20));
+        add(C1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 227, 70, 20));
 
         C2.setBackground(new java.awt.Color(240, 240, 240));
         C2.setText("Answer7");
-        add(C2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 220, -1, -1));
+        add(C2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 227, -1, -1));
 
         D1.setBackground(new java.awt.Color(240, 240, 240));
         D1.setText("Answer8");
-        add(D1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, -1, -1));
+        add(D1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 271, -1, -1));
 
         B1.setBackground(new java.awt.Color(240, 240, 240));
         B1.setText("Answer4");
-        add(B1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, -1, -1));
+        add(B1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 183, -1, -1));
 
         D2.setBackground(new java.awt.Color(240, 240, 240));
         D2.setText("Answer9");
-        add(D2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 270, -1, -1));
+        add(D2, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 271, -1, -1));
 
         E1.setBackground(new java.awt.Color(240, 240, 240));
         E1.setText("Answer10");
-        add(E1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 318, 80, -1));
+        add(E1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 315, 80, -1));
 
         F1.setBackground(new java.awt.Color(240, 240, 240));
         F1.setText("Answer11");
-        add(F1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 360, -1, -1));
+        add(F1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, -1, -1));
 
         F2.setBackground(new java.awt.Color(240, 240, 240));
         F2.setText("Answer12");
-        add(F2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 360, -1, -1));
+        add(F2, new org.netbeans.lib.awtextra.AbsoluteConstraints(585, 360, -1, -1));
 
         F3.setBackground(new java.awt.Color(240, 240, 240));
         F3.setText("Answer13");
-        add(F3, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 360, -1, -1));
+        add(F3, new org.netbeans.lib.awtextra.AbsoluteConstraints(745, 360, -1, -1));
 
         G1.setBackground(new java.awt.Color(240, 240, 240));
         G1.setText("Answer14");
-        add(G1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 400, -1, -1));
+        add(G1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 403, -1, -1));
 
         G2.setBackground(new java.awt.Color(240, 240, 240));
         G2.setText("Answer15");
-        add(G2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 400, -1, -1));
+        add(G2, new org.netbeans.lib.awtextra.AbsoluteConstraints(595, 403, -1, -1));
 
         G3.setBackground(new java.awt.Color(240, 240, 240));
         G3.setText("Answer16");
-        add(G3, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 400, -1, -1));
+        add(G3, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 403, -1, -1));
 
         H1.setEditable(false);
         H1.setText("Answer17");
-        add(H1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 450, -1, -1));
+        add(H1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 448, -1, -1));
 
         H2.setBackground(new java.awt.Color(240, 240, 240));
         H2.setText("Answer18");
-        add(H2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 440, -1, -1));
+        add(H2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 448, -1, -1));
 
         H3.setBackground(new java.awt.Color(240, 240, 240));
         H3.setText("Answer19");
-        add(H3, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 440, -1, -1));
+        add(H3, new org.netbeans.lib.awtextra.AbsoluteConstraints(755, 448, -1, -1));
 
         I1.setBackground(new java.awt.Color(240, 240, 240));
         I1.setText("Answer20");
-        add(I1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 490, -1, -1));
+        add(I1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 492, -1, -1));
 
         I2.setBackground(new java.awt.Color(240, 240, 240));
         I2.setText("Answer21");
-        add(I2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 490, -1, -1));
+        add(I2, new org.netbeans.lib.awtextra.AbsoluteConstraints(595, 492, -1, -1));
 
         I3.setBackground(new java.awt.Color(240, 240, 240));
         I3.setText("Answer22");
-        add(I3, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 490, -1, -1));
+        add(I3, new org.netbeans.lib.awtextra.AbsoluteConstraints(655, 492, -1, -1));
 
         I4.setBackground(new java.awt.Color(240, 240, 240));
         I4.setText("Answer23");
-        add(I4, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 490, -1, -1));
+        add(I4, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 492, -1, -1));
 
         J1.setBackground(new java.awt.Color(240, 240, 240));
         J1.setText("Answer24");
-        add(J1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 530, -1, -1));
+        add(J1, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 536, -1, -1));
 
         J2.setBackground(new java.awt.Color(240, 240, 240));
         J2.setText("Answer25");
@@ -366,10 +366,12 @@ public class White1 extends javax.swing.JPanel {
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setText("1. Step into a              Side Fighting stance facing your left, Say             And Do A             Punch\n\n2. Step into a              Side Fighting Stance Facing Your Right And Do A                Punch.\n\n3. Step Into A              Side Fighting Stance Facing The Front And Do A               Punch.\n\n4. Step Into A              Side Fighting Stance Facing The Back And Do a              Punch.\n\n5. Say                After the Reverse Punch\n\n6. Step Into a               Side Fighting Stance Facing Your Left, do a                Kick, then a               Punch.\n\n7. Step Into a               Side Fighting Stance Facing Your Right, do a               Kick, Then A              Punch.\n\n8. Step Into a               Side Fighting Stance Facing The Back, Do A             Kick, Then A              Punch.\n\n9. Step Into a               Side Fighting Stance Facing The Front, Do A                          Kick, Then A     Punch.\n\n10. Step Into a               Side Fighting Stance Facing The Back, Do A           Kick, Then A                  Punch.\n\n11. Step Into a               Side Fighting Stance Facing The Front And Say              .");
+        jTextArea1.setText("1. Step into a           Side Fighting stance facing your left, Say             And Do A           Punch\n\n2. Step into a           Side Fighting Stance Facing Your Right And Do A           Punch.\n\n3. Step Into A              Side Fighting Stance Facing The Front And Do A           Punch.\n\n4. Step Into A          Side Fighting Stance Facing The Back And Do a           Punch.\n\n5. Say                After the Reverse Punch\n\n6. Step Into a           Side Fighting Stance Facing Your Left, do a           Kick, then a           Punch.\n\n7. Step Into a           Side Fighting Stance Facing Your Right, do a           Kick, Then A           Punch.\n\n8. Step Into a           Side Fighting Stance Facing The Back, Do A           Kick, Then A           Punch.\n\n9. Step Into a           Side Fighting Stance Facing The Front, Do A                     Kick, Then A           Punch.\n\n10. Step Into a           Side Fighting Stance Facing The Back, Do A           Kick, Then A                  Punch.\n\n11. Step Into a               Side Fighting Stance Facing The Front And Say              .");
+        jTextArea1.setMinimumSize(new java.awt.Dimension(1400, 466));
+        jTextArea1.setPreferredSize(new java.awt.Dimension(1400, 466));
         jScrollPane1.setViewportView(jTextArea1);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 134, 920, 510));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 134, 1490, 510));
     }// </editor-fold>//GEN-END:initComponents
 
     private void Reverse1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Reverse1ActionPerformed
