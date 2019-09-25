@@ -283,7 +283,7 @@ public class White1 extends javax.swing.JPanel {
 
         E1.setBackground(new java.awt.Color(240, 240, 240));
         E1.setText("Answer10");
-        add(E1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, 80, 30));
+        add(E1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 318, 80, -1));
 
         F1.setBackground(new java.awt.Color(240, 240, 240));
         F1.setText("Answer11");
