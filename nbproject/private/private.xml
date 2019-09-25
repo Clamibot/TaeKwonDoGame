@@ -4,8 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/School/Documents/GitHub/TaeKwonDoGame/src/GUI.java</file>
+<<<<<<< HEAD
             <file>file:/C:/Users/School/Documents/GitHub/TaeKwonDoGame/src/Main.java</file>
             <file>file:/C:/Users/School/Documents/GitHub/TaeKwonDoGame/src/White1.java</file>
+=======
+            <file>file:/C:/Users/School/Documents/GitHub/TaeKwonDoGame/src/White1.java</file>
+            <file>file:/C:/Users/School/Documents/GitHub/TaeKwonDoGame/src/Main.java</file>
+>>>>>>> parent of b3c8dfc... Update 3.2
         </group>
     </open-files>
 </project-private>

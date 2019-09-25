@@ -183,39 +183,28 @@ public class GUI extends Thread {
             public void mouseClicked(MouseEvent e) {
                 contentPane.removeAll();
                 displaywindow.remove(contentPane);
-                cont.add(new Gold1());
+            //    cont.add(new Gold1());
                 displaywindow.add(cont);
                 displaywindow.pack();
+//                Main.display.DisplayKata2();
             }
         });
         orange_belt_button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                contentPane.removeAll();
-                displaywindow.remove(contentPane);
-                cont.add(new Orange1());
-                displaywindow.add(cont);
-                displaywindow.pack();
+                Main.display.DisplayKata3();
             }
         });
         purple_belt_button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-               contentPane.removeAll();
-                displaywindow.remove(contentPane);
-                cont.add(new Purple1());
-                displaywindow.add(cont);
-                displaywindow.pack();
+                Main.display.DisplayKata4();
             }
         });
         green_belt_button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                contentPane.removeAll();
-                displaywindow.remove(contentPane);
-                cont.add(new Green1());
-                displaywindow.add(cont);
-                displaywindow.pack();
+                Main.display.DisplayKata5();
             }
         });
         blue_belt_button.addMouseListener(new MouseAdapter() {
@@ -239,11 +228,7 @@ public class GUI extends Thread {
         black_belt_button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                contentPane.removeAll();
-                displaywindow.remove(contentPane);
-                cont.add(new Black1());
-                displaywindow.add(cont);
-                displaywindow.pack();
+                Main.display.DisplayKata13();
             }
         });
     }
@@ -346,21 +331,13 @@ public class GUI extends Thread {
         blue_belt_button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                contentPane.removeAll();
-                displaywindow.remove(contentPane);
-                cont.add(new Blue11());
-                displaywindow.add(cont);
-                displaywindow.pack();
+                Main.display.DisplayKata6();
             }
         });
         blue_belt_button2.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                contentPane.removeAll();
-                displaywindow.remove(contentPane);
-                cont.add(new Blue21());
-                displaywindow.add(cont);
-                displaywindow.pack();
+                Main.display.DisplayKata7();
             }
         });
 
@@ -401,21 +378,13 @@ public class GUI extends Thread {
         red_belt_button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                contentPane.removeAll();
-                displaywindow.remove(contentPane);
-                cont.add(new Red11());
-                displaywindow.add(cont);
-                displaywindow.pack();
+                Main.display.DisplayKata8();
             }
         });
         red_belt_button2.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                contentPane.removeAll();
-                displaywindow.remove(contentPane);
-                cont.add(new Red21());
-                displaywindow.add(cont);
-                displaywindow.pack();
+                Main.display.DisplayKata9();
             }
         });
 
@@ -463,31 +432,19 @@ public class GUI extends Thread {
         brown_belt_button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                contentPane.removeAll();
-                displaywindow.remove(contentPane);
-                cont.add(new Brown11());
-                displaywindow.add(cont);
-                displaywindow.pack();
+                Main.display.DisplayKata10();
             }
         });
         brown_belt_button2.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                contentPane.removeAll();
-                displaywindow.remove(contentPane);
-                cont.add(new Brown21());
-                displaywindow.add(cont);
-                displaywindow.pack();
+                Main.display.DisplayKata11();
             }
         });
         brown_belt_button3.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                contentPane.removeAll();
-                displaywindow.remove(contentPane);
-                cont.add(new Brown31());
-                displaywindow.add(cont);
-                displaywindow.pack();
+                Main.display.DisplayKata12();
             }
         });
 
