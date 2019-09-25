@@ -5,7 +5,7 @@ import java.awt.Color;
  *
  * @author MasterWard
  */
-public class Red21 extends javax.swing.JPanel {
+public class Red22 extends javax.swing.JPanel {
 
     // private String ans[] = {"Reverse", "Left", "Kia", "Reverse", "Right", "Reverse", "Left", "Reverse", "Reverse", "Reverse", "Reverse"}; // FOr debugging can delete later
     private int answer[] = {2, 4, 1, 3, 1, 2, 1, 3, 1, 4, 2, 1, 2, 3, 4, 3, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2}; // Answers in int form
@@ -17,7 +17,7 @@ public class Red21 extends javax.swing.JPanel {
     /**
      * White belt Interactive Form
      */
-    public Red21() {
+    public Red22() {
         initComponents();
     }
 
@@ -534,7 +534,7 @@ public class Red21 extends javax.swing.JPanel {
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setText("1. Go into position for the kata.\n\n2. Do a palm strike to your left with the left hand in a left side ___ stance and say ___.\n\n3. Do a _____ kick, step forward, and do another palm strike with the right hand.\n\n4. With the same hand, turn 180 degrees to the right and do a palm strike.\n\n5. Do a _____ kick, step forward, and do another palm strike with the left hand.\n\n6. ______ block into a left side fighting stance facing the front.\n\n7. Reach with the front hand and step over into a left side forebalance.\n\n8. Do a ______ elbow.\n\n9. Step forward into a ______ block in a right side fighting stance.\n\n10. Reach with the front hand and step over into a right side forebalance.\n\n11. Do a ______ elbow.\n\n12. Step forward and do a double punch, then step forward and do a double palm strike.");
+        jTextArea1.setText("13. Say ___.\n\n14. Fold for a cross block and turn 270 degrees towards your left.\n\n15. Do a cross block in a ____ side forebalance.\n\n16. Shrink it to a ____ side fighting stance, then do a backfist.\n\n17. Step out into a ____ side forebalance, wrap with the front arm, then do a _______ punch.\n\n18. Do a backfist in a _____ side fighting stance facing the right.\n\n19. Step out into a ____ side forebalance, wrap with the front arm, then do a _______ punch.\n\n20. Fold for a Tsong-Su block.\n\n21. Slide your feet together, step out into a ____ side forebalance, then do a ________ block.\n\n22. Step up into a Yokh-Jeen block, then step into a horse stance and punch.\n\n23. Do a come-around ____ kick, land in a Tsong-Su block.\n\n24. Step up into a Yokh-Jeen block, then step into a horse stance and punch.");
         jScrollPane1.setViewportView(jTextArea1);
 
         gridBagConstraints = new java.awt.GridBagConstraints();

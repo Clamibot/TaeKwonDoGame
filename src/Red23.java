@@ -5,7 +5,7 @@ import java.awt.Color;
  *
  * @author MasterWard
  */
-public class Red21 extends javax.swing.JPanel {
+public class Red23 extends javax.swing.JPanel {
 
     // private String ans[] = {"Reverse", "Left", "Kia", "Reverse", "Right", "Reverse", "Left", "Reverse", "Reverse", "Reverse", "Reverse"}; // FOr debugging can delete later
     private int answer[] = {2, 4, 1, 3, 1, 2, 1, 3, 1, 4, 2, 1, 2, 3, 4, 3, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2}; // Answers in int form
@@ -17,7 +17,7 @@ public class Red21 extends javax.swing.JPanel {
     /**
      * White belt Interactive Form
      */
-    public Red21() {
+    public Red23() {
         initComponents();
     }
 
@@ -534,7 +534,7 @@ public class Red21 extends javax.swing.JPanel {
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setText("1. Go into position for the kata.\n\n2. Do a palm strike to your left with the left hand in a left side ___ stance and say ___.\n\n3. Do a _____ kick, step forward, and do another palm strike with the right hand.\n\n4. With the same hand, turn 180 degrees to the right and do a palm strike.\n\n5. Do a _____ kick, step forward, and do another palm strike with the left hand.\n\n6. ______ block into a left side fighting stance facing the front.\n\n7. Reach with the front hand and step over into a left side forebalance.\n\n8. Do a ______ elbow.\n\n9. Step forward into a ______ block in a right side fighting stance.\n\n10. Reach with the front hand and step over into a right side forebalance.\n\n11. Do a ______ elbow.\n\n12. Step forward and do a double punch, then step forward and do a double palm strike.");
+        jTextArea1.setText("25. Do another come-around side kick and land in a ______ block.\n\n26. Step out into a ____ side forebalance and press.\n\n27. Step forward into a ______ block.\n\n28. Step out into a ____ side forebalance and press.\n\n29. Slide your feet together and turn 9degrees to your left.\n\n30. Fold for a press with the left hand on bottom and the right hand on top.\n\n31. Step out into a _____ side deep fighting stance and press towards the right.\n\n32. Slide your feet together.\n\n33. Fold for a press with the right hand on bottom and the left hand on top.\n\n34. Step out into a ____ side deep fighting stance and press towards the left.\n\n35. Say ___.\n\n36. Wait seconds, and go back to the position for the kata.\n");
         jScrollPane1.setViewportView(jTextArea1);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
