@@ -192,25 +192,25 @@ public class GUI extends Thread {
         orange_belt_button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                Main.display.DisplayKata3();
+                //Main.display.DisplayKata3();
             }
         });
         purple_belt_button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                Main.display.DisplayKata4();
+                //Main.display.DisplayKata4();
             }
         });
         green_belt_button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                Main.display.DisplayKata5();
+                //Main.display.DisplayKata5();
             }
         });
         blue_belt_button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                Main.display.DisplayBlueBeltMenu();
+                //Main.display.DisplayBlueBeltMenu();
             }
         });
         red_belt_button.addMouseListener(new MouseAdapter() {
@@ -228,7 +228,7 @@ public class GUI extends Thread {
         black_belt_button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                Main.display.DisplayKata13();
+                //Main.display.DisplayKata13();
             }
         });
     }
@@ -331,13 +331,13 @@ public class GUI extends Thread {
         blue_belt_button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                Main.display.DisplayKata6();
+                //Main.display.DisplayKata6();
             }
         });
         blue_belt_button2.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                Main.display.DisplayKata7();
+                //Main.display.DisplayKata7();
             }
         });
 
@@ -378,13 +378,13 @@ public class GUI extends Thread {
         red_belt_button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                Main.display.DisplayKata8();
+                //Main.display.DisplayKata8();
             }
         });
         red_belt_button2.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                Main.display.DisplayKata9();
+                //Main.display.DisplayKata9();
             }
         });
 
@@ -432,19 +432,19 @@ public class GUI extends Thread {
         brown_belt_button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                Main.display.DisplayKata10();
+                //Main.display.DisplayKata10();
             }
         });
         brown_belt_button2.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                Main.display.DisplayKata11();
+                //Main.display.DisplayKata11();
             }
         });
         brown_belt_button3.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                Main.display.DisplayKata12();
+                //Main.display.DisplayKata12();
             }
         });
 
