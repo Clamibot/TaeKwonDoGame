@@ -1,5 +1,8 @@
 
 import java.awt.Color;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /**
  *
@@ -8,111 +11,84 @@ import java.awt.Color;
 public class Gold1 extends javax.swing.JPanel {
 
     // private String ans[] = {"Reverse", "Left", "Kia", "Reverse", "Right", "Reverse", "Left", "Reverse", "Reverse", "Reverse", "Reverse"}; // FOr debugging can delete later
-    private int answer[] = {2, 4, 1, 3, 1, 2, 1, 3, 1, 4, 2, 1, 2, 3, 4, 3, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2}; // Answers in int form
-    private int selection[] = {0, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7}; //  Things for the answers
+    private int answer[] = {1, 3, 1, 5, 1, 4, 1, 1, 3, 1, 1, 4, 1, 5, 2, 3, 2, 4, 2, 3, 2, 4, 5}; // Answers in int form
+    private int selection = 0; // Variable that holds the player's response to a highlighted section of the text
     private int index = 0; // Index of answers on
-    private String options[] = {" ", "Reverse", "Left", "Right", "Kia", "", "", ""}; // The options to choose
+    private String options[] = {" ", "Low", "Scoop", "Left", "Right", "Kia", ""}; // The options to choose
+    private JTextField textFields[];
+    public JFrame messages = new JFrame("JOptionPane showMessageDialog example");
+    public Object messageoptions[] = {"Exit To Main Menu", "Quit Game"};
 // This also means that 0 is nothing, 1 is reverse, 2 is left, 3 is right and 4 Kia in the selection array.
 
     /**
-     * White belt Interactive Form
+     * Gold belt Interactive Form
      */
     public Gold1() {
         initComponents();
+        textFields = new JTextField[]{A1, A2, A3, B1, B2, C1, C2, D1, D2, E1, F1, F2, F3, G1, G2, G3, H1, H2, H3, I1, I2, I3, I4};
+        initialPaint();
     }
 
+    /**
+     * Method that paints the first frame of the level
+     */
+    private void initialPaint()
+    {
+        // Erase the text from all text boxes
+        for (int i = 0; i < answer.length; i++)
+        {
+            textFields[i].setText("");
+        }
+        
+        // Paint the first text box yellow since we start there
+        textFields[0].setBackground(Color.yellow);
+    }
+    
     /**
      * Method that deals with the painting of JTextFields based on selection and
      * answer arrays
      */
     private void paintingNew() {
-        if (selection[index] == answer[index]) { // Moving on
+        if (selection == answer[index]) // The player was correct, so let's move on
+        {
+            textFields[index].setText(options[answer[index]]);
+            textFields[index].setBackground(Color.green); // Turn the previous highlight green
             index++;
-            selection[index] = 0; // Setting to yellow
+            if (index == answer.length)
+            {
+                // Display a congratulatory text box here and ask the player if they want to return to the main menu or exit
+                JOptionPane.showMessageDialog(null, "Congratulations! You Completed The Kata!");
+                
+                int choice = JOptionPane.showOptionDialog(null,
+                        "Do You Want To Return To The Main Menu Or Exit The Game?",
+                        "Next Steps", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, messageoptions, null);
+                if (choice == 0)
+                {
+                    Main.display.DisplayMainMenu(false, true);
+                }
+                else
+                {
+                    // Kill all threads and exit
+                    try
+                    {
+                        Main.display.kill();
+                        JOptionPane.showMessageDialog(null, "Thanks For Playing!");
+                        System.exit(0);
+                    }
+                    catch (Exception closeException)
+                    {
+                        JOptionPane.showMessageDialog(null, "Something Went Wrong When Attempting To Kill Program Threads. Force Closing Program.");
+                        System.exit(0);
+                    }
+                }
+            }
+            else
+                textFields[index].setBackground(Color.yellow); // Highlight the next text box yellow
         }
-        /**
-         * The First one is the Line\Question A=1, B=2, C=3, D=4, E=5 and so on;
-         * The number is for the order of questions on that line. 1 is first 2
-         * second, 3 is third and so on
-         */
-        
-        A1.setText(options[selection[0]]);
-        A1.setBackground(getColor(0));
-        A2.setText(options[selection[1]]);
-        A2.setBackground(getColor(1));
-        A3.setText(options[selection[2]]);
-        A3.setBackground(getColor(2));
-        B1.setText(options[selection[3]]);
-        B1.setBackground(getColor(3));
-        B2.setText(options[selection[4]]);
-        B2.setBackground(getColor(4));
-        C1.setText(options[selection[5]]);
-        C1.setBackground(getColor(5));
-        C2.setText(options[selection[6]]);
-        C2.setBackground(getColor(6));
-        D1.setText(options[selection[7]]);
-        D1.setBackground(getColor(7));
-        D2.setText(options[selection[8]]);
-        D2.setBackground(getColor(8));
-        E1.setText(options[selection[9]]);
-        E1.setBackground(getColor(9));
-        F1.setText(options[selection[10]]);
-        F1.setBackground(getColor(10));
-        F2.setText(options[selection[11]]);
-        F2.setBackground(getColor(11));
-        F3.setText(options[selection[12]]);
-        F3.setBackground(getColor(12));
-        G1.setText(options[selection[13]]);
-        G1.setBackground(getColor(13));
-        G2.setText(options[selection[14]]);
-        G2.setBackground(getColor(14));
-        G3.setText(options[selection[15]]);
-        G3.setBackground(getColor(15));
-        H1.setText(options[selection[16]]);
-        H1.setBackground(getColor(16));
-        H2.setText(options[selection[17]]);
-        H2.setBackground(getColor(17));
-        H3.setText(options[selection[18]]);
-        H3.setBackground(getColor(18));
-        I1.setText(options[selection[19]]);
-        I1.setBackground(getColor(19));
-        I2.setText(options[selection[20]]);
-        I2.setBackground(getColor(20));
-        I3.setText(options[selection[21]]);
-        I3.setBackground(getColor(21));
-        I4.setText(options[selection[22]]);
-        I4.setBackground(getColor(22));
-        /* For debugging */
-        //       System.out.println(Arrays.toString(answer));
-        //     System.out.println(Arrays.toString(selection));
-        //       System.out.println(index);
-        /* For writting the JTextField code really quick */
- /*
-        for (int i = 1; i < 29; i++) { // Used to write the part above this
-            System.out.println("jTextField" + i + ".setText(options[selection[" + (i - 1) + "]]);");
-            System.out.println("jTextField" + i + ".setBackground(getColor(" + (i - 1) + "));");
-            System.out.print("0,"); // For the array
-        }
-         */
-
-//        System.out.println("FUCK YOU BROKE IT. I AM NOT THERE YET");
-    }
-
-    /**
-     * To decide what color each JTextField is going to be painted
-     *
-     * @param a
-     * @return
-     */
-    private Color getColor(int a) {
-        if (selection[a] == 7) {// Clear ones
-            return (new Color(204, 204, 204));
-        } else if (selection[a] == 0) { // Is the next one
-            return Color.YELLOW;
-        } else if (selection[a] == answer[a]) { // Right
-            return Color.GREEN;
-        } else { // Wrong
-            return Color.RED;
+        else // The player was wrong
+        {
+            textFields[index].setBackground(Color.red); // Set the highlight color to red
+            textFields[index].setText(options[selection]);
         }
     }
 
@@ -125,11 +101,14 @@ public class Gold1 extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Reverse1 = new javax.swing.JButton();
-        Left2 = new javax.swing.JButton();
-        Right3 = new javax.swing.JButton();
-        Kia4 = new javax.swing.JButton();
+        Low1 = new javax.swing.JButton();
+        Scoop2 = new javax.swing.JButton();
+        Left3 = new javax.swing.JButton();
+        Right4 = new javax.swing.JButton();
+        Kia5 = new javax.swing.JButton();
+        MainMenuButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         A1 = new javax.swing.JTextField();
         A2 = new javax.swing.JTextField();
         A3 = new javax.swing.JTextField();
@@ -157,221 +136,259 @@ public class Gold1 extends javax.swing.JPanel {
         jTextArea1 = new javax.swing.JTextArea();
 
         setBackground(new java.awt.Color(204, 204, 204));
-        setMaximumSize(new java.awt.Dimension(2400, 1000));
-        setMinimumSize(new java.awt.Dimension(1600, 900));
+        setMaximumSize(new java.awt.Dimension(1610, 910));
+        setMinimumSize(new java.awt.Dimension(1610, 910));
         setName("White Belt"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(1600, 900));
+        setPreferredSize(new java.awt.Dimension(1610, 910));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Reverse1.setBackground(new java.awt.Color(0, 240, 240));
-        Reverse1.setText("Reverse");
-        Reverse1.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                Reverse1ItemStateChanged(evt);
-            }
-        });
-        Reverse1.addMouseListener(new java.awt.event.MouseAdapter() {
+        Low1.setBackground(new java.awt.Color(0, 240, 240));
+        Low1.setText("Low");
+        Low1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Reverse1MouseClicked(evt);
+                Low1MouseClicked(evt);
             }
         });
-        Reverse1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Reverse1ActionPerformed(evt);
-            }
-        });
-        add(Reverse1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 190, 45));
+        add(Low1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 190, 60));
 
-        Left2.setText("Left");
-        Left2.addMouseListener(new java.awt.event.MouseAdapter() {
+        Scoop2.setBackground(new java.awt.Color(0, 240, 240));
+        Scoop2.setText("Scoop");
+        Scoop2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Left2MouseClicked(evt);
+                Scoop2MouseClicked(evt);
             }
         });
-        Left2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Left2ActionPerformed(evt);
-            }
-        });
-        add(Left2, new org.netbeans.lib.awtextra.AbsoluteConstraints(334, 70, 194, 45));
+        add(Scoop2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, 190, 60));
 
-        Right3.setText("Right");
-        Right3.addMouseListener(new java.awt.event.MouseAdapter() {
+        Left3.setText("Left");
+        Left3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Right3MouseClicked(evt);
+                Left3MouseClicked(evt);
             }
         });
-        add(Right3, new org.netbeans.lib.awtextra.AbsoluteConstraints(644, 60, 202, 45));
+        add(Left3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 70, 190, 60));
 
-        Kia4.setText("Kia");
-        Kia4.addMouseListener(new java.awt.event.MouseAdapter() {
+        Right4.setText("Right");
+        Right4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Kia4MouseClicked(evt);
+                Right4MouseClicked(evt);
             }
         });
-        add(Kia4, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 70, 145, 45));
+        add(Right4, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 70, 190, 60));
+
+        Kia5.setText("Kia");
+        Kia5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Kia5MouseClicked(evt);
+            }
+        });
+        add(Kia5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 70, 190, 60));
+
+        MainMenuButton.setText("Back To Main Menu");
+        MainMenuButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MainMenuButtonMouseClicked(evt);
+            }
+        });
+        add(MainMenuButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 855, 200, 50));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Word Bank");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 13, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, 90, 40));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel3.setText("Steps For Kata Chun-G:");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(679, 160, 252, 40));
 
         A1.setEditable(false);
+        A1.setBackground(new java.awt.Color(204, 204, 204));
         A1.setText("Answer1");
+        A1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
         A1.setMaximumSize(new java.awt.Dimension(100, 100));
         A1.setMinimumSize(new java.awt.Dimension(10, 22));
-        A1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                A1ActionPerformed(evt);
-            }
-        });
-        add(A1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 138, 56, 22));
+        add(A1, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 206, 63, -1));
 
-        A2.setBackground(new java.awt.Color(240, 240, 240));
+        A2.setEditable(false);
+        A2.setBackground(new java.awt.Color(204, 204, 204));
         A2.setText("Answer2");
-        add(A2, new org.netbeans.lib.awtextra.AbsoluteConstraints(364, 138, 60, -1));
+        A2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(A2, new org.netbeans.lib.awtextra.AbsoluteConstraints(368, 206, 63, -1));
 
-        A3.setBackground(new java.awt.Color(240, 240, 240));
+        A3.setEditable(false);
+        A3.setBackground(new java.awt.Color(204, 204, 204));
         A3.setText("Answer3");
-        A3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                A3ActionPerformed(evt);
-            }
-        });
-        add(A3, new org.netbeans.lib.awtextra.AbsoluteConstraints(714, 138, 56, 18));
+        A3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(A3, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 206, 63, -1));
 
-        B2.setBackground(new java.awt.Color(240, 240, 240));
+        B2.setEditable(false);
+        B2.setBackground(new java.awt.Color(204, 204, 204));
         B2.setText("Answer5");
-        add(B2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 228, 56, 18));
+        B2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(B2, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 294, 63, -1));
 
-        C1.setBackground(new java.awt.Color(240, 240, 240));
+        C1.setEditable(false);
+        C1.setBackground(new java.awt.Color(204, 204, 204));
         C1.setText("Answer6");
-        add(C1, new org.netbeans.lib.awtextra.AbsoluteConstraints(364, 228, 70, 18));
+        C1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(C1, new org.netbeans.lib.awtextra.AbsoluteConstraints(368, 294, 63, -1));
 
-        C2.setBackground(new java.awt.Color(240, 240, 240));
+        C2.setEditable(false);
+        C2.setBackground(new java.awt.Color(204, 204, 204));
         C2.setText("Answer7");
-        add(C2, new org.netbeans.lib.awtextra.AbsoluteConstraints(774, 228, 56, -1));
+        C2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(C2, new org.netbeans.lib.awtextra.AbsoluteConstraints(798, 294, 63, -1));
 
-        D1.setBackground(new java.awt.Color(240, 240, 240));
+        D1.setEditable(false);
+        D1.setBackground(new java.awt.Color(204, 204, 204));
         D1.setText("Answer8");
-        add(D1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 316, 56, -1));
+        D1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(D1, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, 383, 63, -1));
 
-        B1.setBackground(new java.awt.Color(240, 240, 240));
+        B1.setEditable(false);
+        B1.setBackground(new java.awt.Color(204, 204, 204));
         B1.setText("Answer4");
-        add(B1, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 138, 56, -1));
+        B1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(B1, new org.netbeans.lib.awtextra.AbsoluteConstraints(936, 206, 63, -1));
 
-        D2.setBackground(new java.awt.Color(240, 240, 240));
+        D2.setEditable(false);
+        D2.setBackground(new java.awt.Color(204, 204, 204));
         D2.setText("Answer9");
-        add(D2, new org.netbeans.lib.awtextra.AbsoluteConstraints(354, 316, 56, -1));
+        D2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(D2, new org.netbeans.lib.awtextra.AbsoluteConstraints(368, 383, 56, -1));
 
-        E1.setBackground(new java.awt.Color(240, 240, 240));
+        E1.setEditable(false);
+        E1.setBackground(new java.awt.Color(204, 204, 204));
         E1.setText("Answer10");
-        add(E1, new org.netbeans.lib.awtextra.AbsoluteConstraints(754, 316, 80, -1));
+        E1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(E1, new org.netbeans.lib.awtextra.AbsoluteConstraints(787, 383, 63, -1));
 
-        F1.setBackground(new java.awt.Color(240, 240, 240));
+        F1.setEditable(false);
+        F1.setBackground(new java.awt.Color(204, 204, 204));
         F1.setText("Answer11");
-        add(F1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 394, 63, -1));
+        F1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(F1, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, 471, 63, -1));
 
-        F2.setBackground(new java.awt.Color(240, 240, 240));
+        F2.setEditable(false);
+        F2.setBackground(new java.awt.Color(204, 204, 204));
         F2.setText("Answer12");
-        add(F2, new org.netbeans.lib.awtextra.AbsoluteConstraints(354, 404, 63, -1));
+        F2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(F2, new org.netbeans.lib.awtextra.AbsoluteConstraints(368, 471, 63, -1));
 
-        F3.setBackground(new java.awt.Color(240, 240, 240));
+        F3.setEditable(false);
+        F3.setBackground(new java.awt.Color(204, 204, 204));
         F3.setText("Answer13");
-        add(F3, new org.netbeans.lib.awtextra.AbsoluteConstraints(744, 394, 63, -1));
+        F3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(F3, new org.netbeans.lib.awtextra.AbsoluteConstraints(788, 471, 63, -1));
 
-        G1.setBackground(new java.awt.Color(240, 240, 240));
+        G1.setEditable(false);
+        G1.setBackground(new java.awt.Color(204, 204, 204));
         G1.setText("Answer14");
-        add(G1, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 442, 63, -1));
+        G1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(G1, new org.netbeans.lib.awtextra.AbsoluteConstraints(918, 515, 63, -1));
 
-        G2.setBackground(new java.awt.Color(240, 240, 240));
+        G2.setEditable(false);
+        G2.setBackground(new java.awt.Color(204, 204, 204));
         G2.setText("Answer15");
-        add(G2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 480, 63, -1));
+        G2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(G2, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 558, 63, -1));
 
-        G3.setBackground(new java.awt.Color(240, 240, 240));
+        G3.setEditable(false);
+        G3.setBackground(new java.awt.Color(204, 204, 204));
         G3.setText("Answer16");
-        add(G3, new org.netbeans.lib.awtextra.AbsoluteConstraints(294, 480, 63, -1));
+        G3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(G3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 558, 63, -1));
 
         H1.setEditable(false);
+        H1.setBackground(new java.awt.Color(204, 204, 204));
         H1.setText("Answer17");
-        add(H1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 518, 63, -1));
+        H1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(H1, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 603, 63, -1));
 
-        H2.setBackground(new java.awt.Color(240, 240, 240));
+        H2.setEditable(false);
+        H2.setBackground(new java.awt.Color(204, 204, 204));
         H2.setText("Answer18");
-        add(H2, new org.netbeans.lib.awtextra.AbsoluteConstraints(294, 528, 63, -1));
+        H2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(H2, new org.netbeans.lib.awtextra.AbsoluteConstraints(291, 603, 63, -1));
 
-        H3.setBackground(new java.awt.Color(240, 240, 240));
+        H3.setEditable(false);
+        H3.setBackground(new java.awt.Color(204, 204, 204));
         H3.setText("Answer19");
-        add(H3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 566, 63, -1));
+        H3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(H3, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 647, 63, -1));
 
-        I1.setBackground(new java.awt.Color(240, 240, 240));
+        I1.setEditable(false);
+        I1.setBackground(new java.awt.Color(204, 204, 204));
         I1.setText("Answer20");
-        add(I1, new org.netbeans.lib.awtextra.AbsoluteConstraints(294, 566, 63, -1));
+        I1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(I1, new org.netbeans.lib.awtextra.AbsoluteConstraints(291, 647, 63, -1));
 
-        I2.setBackground(new java.awt.Color(240, 240, 240));
+        I2.setEditable(false);
+        I2.setBackground(new java.awt.Color(204, 204, 204));
         I2.setText("Answer21");
-        add(I2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 604, 63, -1));
+        I2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(I2, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 690, 63, -1));
 
-        I3.setBackground(new java.awt.Color(240, 240, 240));
+        I3.setEditable(false);
+        I3.setBackground(new java.awt.Color(204, 204, 204));
         I3.setText("Answer22");
-        add(I3, new org.netbeans.lib.awtextra.AbsoluteConstraints(294, 614, 63, -1));
+        I3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(I3, new org.netbeans.lib.awtextra.AbsoluteConstraints(291, 690, 63, -1));
 
-        I4.setBackground(new java.awt.Color(240, 240, 240));
+        I4.setEditable(false);
+        I4.setBackground(new java.awt.Color(204, 204, 204));
         I4.setText("Answer23");
-        add(I4, new org.netbeans.lib.awtextra.AbsoluteConstraints(424, 692, 63, -1));
+        I4.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(I4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 824, 63, -1));
 
+        jScrollPane1.setViewportBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        jTextArea1.setEditable(false);
         jTextArea1.setBackground(new java.awt.Color(204, 204, 204));
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setText("1. Fold For A ___ Block, Step Into A ____ Side Forebalance Facing Your Left, Do A ___ Block, And Say ___.//Answers: low, left, low, kia\n\n2. Point Forward With The Same Arm you Blocked With, Step Forward With The Back Foot, And Punch.\n\n3. Fold For A ___ Block, Step Into A ____ Side Forebalance Facing Your Right, And Do A ___ Block.//Answers: low, right, low\n\n4. Point Forward With The Same Arm you Blocked With, Step Forward With The Back Foot, And Punch.\n\n5. Fold For A ___ Block, Step Into A ____ Side Forebalance Facing The Front, And Do A ___ Block.\n\n6. Point Forward With The Same Arm you Blocked With, Step Forward With The Back Foot, And Punch.\n\n7. Fold For A ___ Block, Step Into A ____ Side Forebalance Facing The Back, And Do A ___ Block.\n\n8. Point Forward With The Same Arm you Blocked With, Step Forward With The Back Foot, Punch, Then Say ___.\n\n9. Do A _____ Block Into A ____ Side Fighting Stance Facing Your Left, Point Forward, Step Forward Into A Forebalance, And Punch.\n\n10. Do A _____ Block Into A ____ Side Fighting Stance Facing Your Right, Point Forward, Step Forward Into A Forebalance, And Punch.\n\n11. Do A _____ Block Into A ____ Side Fighting Stance Facing The Back, Point Forward, Step Forward Into A Forebalance, And Punch.\n\n12. Do A _____ Block Into A ____ Side Fighting Stance Facing The Front, Point Forward, Step Forward Into A Forebalance, And Punch.\n\n13. Step Forward And Punch Again. \n14. Step Backward And Punch.\n15. Step Backward And Punch Again, Then Say ___.\n");
+        jTextArea1.setText("1. Fold For A           Block, Step Into A           Side Forebalance Facing Your Left, Do A           Block, And Say           .\n\n2. Point Forward With The Same Arm you Blocked With, Step Forward With The Back Foot, And Punch.\n\n3. Fold For A           Block, Step Into A           Side Forebalance Facing Your Right, And Do A           Block.\n\n4. Point Forward With The Same Arm you Blocked With, Step Forward With The Back Foot, And Punch.\n\n5. Fold For A           Block, Step Into A          Side Forebalance Facing The Front, And Do A           Block.\n\n6. Point Forward With The Same Arm you Blocked With, Step Forward With The Back Foot, And Punch.\n\n7. Fold For A           Block, Step Into A           Side Forebalance Facing The Back, And Do A           Block.\n\n8. Point Forward With The Same Arm you Blocked With, Step Forward With The Back Foot, Punch, Then Say           .\n\n9. Do A           Block Into A           Side Fighting Stance Facing Your Left, Point Forward, Step Forward Into A Forebalance, And Punch.\n\n10. Do A           Block Into A           Side Fighting Stance Facing Your Right, Point Forward, Step Forward Into A Forebalance, And Punch.\n\n11. Do A           Block Into A           Side Fighting Stance Facing The Back, Point Forward, Step Forward Into A Forebalance, And Punch.\n\n12. Do A           Block Into A           Side Fighting Stance Facing The Front, Point Forward, Step Forward Into A Forebalance, And Punch.\n\n13. Step Forward And Punch Again.\n\n14. Step Backward And Punch.\n\n15. Step Backward And Punch Again, Then Say           .");
+        jTextArea1.setMinimumSize(new java.awt.Dimension(1400, 466));
+        jTextArea1.setPreferredSize(new java.awt.Dimension(1400, 466));
         jScrollPane1.setViewportView(jTextArea1);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 1510, 600));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 1510, 650));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Reverse1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Reverse1ActionPerformed
-
-    }//GEN-LAST:event_Reverse1ActionPerformed
-
-    private void Left2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Left2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Left2ActionPerformed
-
-    private void Reverse1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Reverse1ItemStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Reverse1ItemStateChanged
-
-    private void Reverse1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Reverse1MouseClicked
-        //  System.out.println("Clicked reverse when the answer is " + ans[index]);
-        selection[index] = 1;
+    private void Low1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Low1MouseClicked
+        selection = 1;
         paintingNew();
-    }//GEN-LAST:event_Reverse1MouseClicked
+    }//GEN-LAST:event_Low1MouseClicked
 
-    private void Left2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Left2MouseClicked
-        //  System.out.println("Clicked Left when the answer is " + ans[index]);
-        selection[index] = 2;
+    private void Left3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Left3MouseClicked
+        selection = 3;
         paintingNew();
-    }//GEN-LAST:event_Left2MouseClicked
+    }//GEN-LAST:event_Left3MouseClicked
 
-    private void Right3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Right3MouseClicked
-        //    System.out.println("Clicked Right when the answer is " + ans[index]);
-        selection[index] = 3;
+    private void Right4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Right4MouseClicked
+        selection = 4;
         paintingNew();
-    }//GEN-LAST:event_Right3MouseClicked
+    }//GEN-LAST:event_Right4MouseClicked
 
-    private void Kia4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Kia4MouseClicked
-        //  System.out.println("Clicked Kia when the answer is " + ans[index]);
-        selection[index] = 4;
+    private void Kia5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Kia5MouseClicked
+        selection = 5;
         paintingNew();
-    }//GEN-LAST:event_Kia4MouseClicked
+    }//GEN-LAST:event_Kia5MouseClicked
 
-    private void A1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_A1ActionPerformed
+    private void Scoop2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Scoop2MouseClicked
+        selection = 2;
+        paintingNew();               
+    }//GEN-LAST:event_Scoop2MouseClicked
 
-    private void A3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_A3ActionPerformed
+    private void MainMenuButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MainMenuButtonMouseClicked
+        int confirm = JOptionPane.showOptionDialog(null,
+            "Are You Sure You Want To Return To The Main Menu? You Will Lose All Progress.",
+            "Exit Confirmation", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+        if (confirm == 0)
+        {
+            Main.display.DisplayMainMenu(false, true);
+        }
+    }//GEN-LAST:event_MainMenuButtonMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -398,11 +415,14 @@ public class Gold1 extends javax.swing.JPanel {
     private javax.swing.JTextField I2;
     private javax.swing.JTextField I3;
     private javax.swing.JTextField I4;
-    private javax.swing.JButton Kia4;
-    private javax.swing.JButton Left2;
-    private javax.swing.JButton Reverse1;
-    private javax.swing.JButton Right3;
+    private javax.swing.JButton Kia5;
+    private javax.swing.JButton Left3;
+    private javax.swing.JButton Low1;
+    private javax.swing.JButton MainMenuButton;
+    private javax.swing.JButton Right4;
+    private javax.swing.JButton Scoop2;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables

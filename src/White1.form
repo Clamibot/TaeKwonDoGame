@@ -6,10 +6,10 @@
       <Color blue="cc" green="cc" red="cc" type="rgb"/>
     </Property>
     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1620, 920]"/>
+      <Dimension value="[1610, 910]"/>
     </Property>
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1620, 920]"/>
+      <Dimension value="[1610, 910]"/>
     </Property>
     <Property name="name" type="java.lang.String" value="White Belt" noResource="true"/>
     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -127,7 +127,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="50" y="830" width="300" height="70"/>
+          <AbsoluteConstraints x="50" y="855" width="200" height="50"/>
         </Constraint>
       </Constraints>
     </Component>

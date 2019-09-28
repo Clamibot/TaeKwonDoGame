@@ -143,8 +143,8 @@ public class White1 extends javax.swing.JPanel {
         jTextArea1 = new javax.swing.JTextArea();
 
         setBackground(new java.awt.Color(204, 204, 204));
-        setMaximumSize(new java.awt.Dimension(1620, 920));
-        setMinimumSize(new java.awt.Dimension(1620, 920));
+        setMaximumSize(new java.awt.Dimension(1610, 910));
+        setMinimumSize(new java.awt.Dimension(1610, 910));
         setName("White Belt"); // NOI18N
         setPreferredSize(new java.awt.Dimension(1610, 910));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -205,7 +205,7 @@ public class White1 extends javax.swing.JPanel {
                 MainMenuButtonMouseClicked(evt);
             }
         });
-        add(MainMenuButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 830, 300, 70));
+        add(MainMenuButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 855, 200, 50));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Word Bank");
