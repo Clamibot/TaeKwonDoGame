@@ -28,13 +28,12 @@ public class GUI extends Thread {
     private int done;
     public JTextField output;
     public JPanel contentPane = new JPanel(null);
-    public JPanel cont = new JPanel(new GridBagLayout());
+    public JPanel kataContentPane = new JPanel(new GridBagLayout());
     public JFrame displaywindow = new JFrame();
     public JFrame messages = new JFrame("JOptionPane showMessageDialog example");
 
     // Define all buttons here and load images into them if needed
     private final JButton main_menu_button = new JButton();
-    private final JButton main_menu_button_menu = new JButton();
     private final JButton white_belt_button = new JButton(new ImageIcon("src/resources/white_belt.jpg"));
     private final JButton gold_belt_button = new JButton(new ImageIcon("src/resources/gold_belt.jpg"));
     private final JButton orange_belt_button = new JButton(new ImageIcon("src/resources/orange_belt.jpg"));
@@ -64,13 +63,11 @@ public class GUI extends Thread {
                 // Kill all threads and exit
                 try {
                     Main.display.kill();
-                 //   JOptionPane.showMessageDialog(null, "Thanks For Playing!"); // Put this CODE BACK IN LATER
-                 // DO NOT DELETE THE CODE ON TOP OF HERE
+                    JOptionPane.showMessageDialog(null, "Thanks For Playing!");
                     System.exit(0);
                 } catch (Exception closeException) {
                     // Force the program to close if it's being stupid
-                    JOptionPane.showMessageDialog(null,
-                            "Something Went Wrong When Attempting To Kill Program Threads. Force Closing Program.");
+                    JOptionPane.showMessageDialog(null, "Something Went Wrong When Attempting To Kill Program Threads. Force Closing Program.");
                     System.exit(0);
                 }
             }
@@ -110,8 +107,7 @@ public class GUI extends Thread {
         contentPane.setBackground(new Color(255, 255, 255));
         background.setBounds(0, 0, 1600, 900);
 
-        // Add contentPanel to JFramem set window position, and set window close
-        // operation
+        // Add contentPanel to JFramem set window position, and set window close operation
         displaywindow.add(contentPane);
         displaywindow.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         displaywindow.addWindowListener(exitListener);
@@ -129,9 +125,7 @@ public class GUI extends Thread {
 
         // Specify the button positions and text for all buttons used in the program
         main_menu_button.setText("Back To Main Menu");
-        main_menu_button.setBounds(520, 850, 300, 50);
-        main_menu_button_menu.setText("Back To Main Menu");
-        main_menu_button_menu.setBounds(5, 850, 300, 50);
+        main_menu_button.setBounds(5, 850, 300, 50);
         white_belt_button.setBounds(30, 40, 300, 79);
         gold_belt_button.setBounds(30, 190, 300, 79);
         orange_belt_button.setBounds(30, 340, 300, 79);
@@ -142,51 +136,38 @@ public class GUI extends Thread {
         brown_belt_button.setBounds(1270, 190, 300, 79);
         black_belt_button.setBounds(1270, 340, 300, 79);
 
-        DisplayMainMenu(true);
+        DisplayMainMenu(true, false);
     }
 
     /**
-     * This method activates the mouse listeners for all the buttons in the
-     * game.
+     * This method activates the mouse listeners for all the buttons in the game.
      */
     public void ActivateMouseListeners() {
         // Add MouseListeners to the buttons
         main_menu_button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                int confirm = JOptionPane.showOptionDialog(null,
-                        "Are You Sure You Want To Return To The Main Menu? You Will Lose All Progress.",
-                        "Exit Confirmation", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
-                if (confirm == 0) {
-                    Main.display.DisplayMainMenu(false);
-                }
-            }
-        });
-        main_menu_button_menu.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                Main.display.DisplayMainMenu(false);
+                Main.display.DisplayMainMenu(false, false);
             }
         });
         white_belt_button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                contentPane.removeAll();
                 displaywindow.remove(contentPane);
-                cont.add(new White1());
-                displaywindow.add(cont);
+                kataContentPane.removeAll();
+                kataContentPane.add(new White1());
+                displaywindow.add(kataContentPane);
                 displaywindow.pack();
             }
         });
         gold_belt_button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                contentPane.removeAll();
                 displaywindow.remove(contentPane);
-            //    cont.add(new Gold1());
-                displaywindow.add(cont);
+                kataContentPane.removeAll();
+                kataContentPane.add(new Gold1());
+                displaywindow.add(kataContentPane);
                 displaywindow.pack();
-//                Main.display.DisplayKata2();
             }
         });
         orange_belt_button.addMouseListener(new MouseAdapter() {
@@ -210,7 +191,7 @@ public class GUI extends Thread {
         blue_belt_button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                //Main.display.DisplayBlueBeltMenu();
+                Main.display.DisplayBlueBeltMenu();
             }
         });
         red_belt_button.addMouseListener(new MouseAdapter() {
@@ -236,46 +217,61 @@ public class GUI extends Thread {
     /**
      * This method displays the game's main menu
      *
-     * @param displayIntroText Whether the intro text should be displayed or
-     * not.
+     * @param displayIntroText Whether the intro text should be displayed or not.
+     * @param comingFromKataFrame Whether we're exiting to the main menu from a kata frame or not.
      */
-    public void DisplayMainMenu(boolean displayIntroText) {
+    public void DisplayMainMenu(boolean displayIntroText, boolean comingFromKataFrame) {
         // Clear the previous scene and prep for the new one
-        contentPane.removeAll();
+        if (comingFromKataFrame) // Just reproject the main menu since we didn't modify its panel
+        {
+            displaywindow.remove(kataContentPane);
+            displaywindow.add(contentPane);
+            contentPane.repaint();
+        }
+        else // Redraw the panel since we modified it
+        {
+            contentPane.removeAll();
+            // Move the text output box
+            output.setBounds(490, 520, 645, 50);
 
-        // Move the text output box
-        output.setBounds(490, 520, 645, 50);
-
-        // Add components to the contentPane panel
-        contentPane.add(output);
-        contentPane.add(background);
-        contentPane.add(white_belt_button);
-        contentPane.add(gold_belt_button);
-        contentPane.add(orange_belt_button);
-        contentPane.add(purple_belt_button);
-        contentPane.add(green_belt_button);
-        contentPane.add(blue_belt_button);
-        contentPane.add(red_belt_button);
-        contentPane.add(brown_belt_button);
-        contentPane.add(black_belt_button);
-        contentPane.repaint();
-
-        if (displayIntroText) {
-            try {
-                output.setText("Welcome To Tae Kwon Do Matchup!");
-                Thread.sleep(2000);// Set the delay between text box updates as 1 second
-                output.setText("Please Select Your Experience Level By Clicking On A Belt.");
-                // This fixes a bug with the text output box in the event players click on a
-                // button before all the intro text is displayed.
-                ActivateMouseListeners();
-            } catch (Exception e) {
-                System.out.print("Graphics Thread Error: " + e + "/n");
+            // Add components to the contentPane panel
+            contentPane.add(output);
+            contentPane.add(background);
+            contentPane.add(white_belt_button);
+            contentPane.add(gold_belt_button);
+            contentPane.add(orange_belt_button);
+            contentPane.add(purple_belt_button);
+            contentPane.add(green_belt_button);
+            contentPane.add(blue_belt_button);
+            contentPane.add(red_belt_button);
+            contentPane.add(brown_belt_button);
+            contentPane.add(black_belt_button);
+            contentPane.repaint();
+            
+            if (displayIntroText)
+            {
+                try
+                {
+                    output.setText("Welcome To Tae Kwon Do Matchup!");
+                    Thread.sleep(2000);// Set the delay between text box updates as 1 second
+                    output.setText("Please Select Your Experience Level By Clicking On A Belt.");
+                    // This fixes a bug with the text output box in the event players click on a
+                    // button before all the intro text is displayed.
+                    ActivateMouseListeners();
+                }
+                catch (Exception e)
+                {
+                    System.out.print("Graphics Thread Error: " + e + "/n");
+                }
             }
-        } else {
-            output.setText("Please Select Your Experience Level By Clicking On A Belt.");
+            else
+            {
+                output.setText("Please Select Your Experience Level By Clicking On A Belt.");
+            }
         }
     }
 
+    // This method is depreciated. We'll get rid of this when we're done reworking the kata frames.
     public void PrepForKataFrame(String kataTitle) {
         // Clear the previous scene and prep for the new one
         contentPane.removeAll();
@@ -319,11 +315,11 @@ public class GUI extends Thread {
         blue_belt_button2.setBounds(30, 190, 300, 79);
 
         // Add components to the contentPane panel
-        contentPane.add(background);
         contentPane.add(output);
+        contentPane.add(background);
         contentPane.add(kataText);
         contentPane.add(kataText2);
-        contentPane.add(main_menu_button_menu);
+        contentPane.add(main_menu_button);
         contentPane.add(blue_belt_button);
         contentPane.add(blue_belt_button2);
 
@@ -366,11 +362,11 @@ public class GUI extends Thread {
         red_belt_button2.setBounds(30, 190, 300, 79);
 
         // Add components to the contentPane panel
-        contentPane.add(background);
         contentPane.add(output);
+        contentPane.add(background);
         contentPane.add(kataText);
         contentPane.add(kataText2);
-        contentPane.add(main_menu_button_menu);
+        contentPane.add(main_menu_button);
         contentPane.add(red_belt_button);
         contentPane.add(red_belt_button2);
 
@@ -418,12 +414,12 @@ public class GUI extends Thread {
         brown_belt_button3.setBounds(30, 340, 300, 79);
 
         // Add components to the contentPane panel
-        contentPane.add(background);
         contentPane.add(output);
+        contentPane.add(background);
         contentPane.add(kataText);
         contentPane.add(kataText2);
         contentPane.add(kataText3);
-        contentPane.add(main_menu_button_menu);
+        contentPane.add(main_menu_button);
         contentPane.add(brown_belt_button);
         contentPane.add(brown_belt_button2);
         contentPane.add(brown_belt_button3);

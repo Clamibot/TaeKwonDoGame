@@ -1,5 +1,8 @@
 
 import java.awt.Color;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /**
  *
@@ -9,9 +12,12 @@ public class White1 extends javax.swing.JPanel {
 
     // private String ans[] = {"Reverse", "Left", "Kia", "Reverse", "Right", "Reverse", "Left", "Reverse", "Reverse", "Reverse", "Reverse"}; // FOr debugging can delete later
     private int answer[] = {2, 4, 1, 3, 1, 2, 1, 3, 1, 4, 2, 6, 1, 3, 6, 1, 2, 6, 1, 3, 5, 6, 1, 2, 5, 6, 1, 3, 4}; // Answers in int form
-    private int selection[] = {0, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7}; //  Things for the answers
+    private int selection = 0; // Variable that holds the player's response to a highlighted section of the text
     private int index = 0; // Index of answers on
     private String options[] = {" ", "Reverse", "Left", "Right", "Kia", "Slide-Up", "Front", ""}; // The options to choose
+    private JTextField textFields[];
+    public JFrame messages = new JFrame("JOptionPane showMessageDialog example");
+    public Object messageoptions[] = {"Exit To Main Menu", "Quit Game"};
 // This also means that 0 is nothing, 1 is reverse, 2 is left, 3 is right and 4 Kia in the selection array.
 
     /**
@@ -19,112 +25,70 @@ public class White1 extends javax.swing.JPanel {
      */
     public White1() {
         initComponents();
+        textFields = new JTextField[]{A1, A2, A3, B1, B2, C1, C2, D1, D2, E1, F1, F2, F3, G1, G2, G3, H1, H2, H3, I1, I2, I3, I4, J1, J2, J3, J4, K1, K2};
+        initialPaint();
     }
 
+    /**
+     * Method that paints the first frame of the level
+     */
+    private void initialPaint()
+    {
+        // Erase the text from all text boxes
+        for (int i = 0; i < answer.length; i++)
+        {
+            textFields[i].setText("");
+        }
+        
+        // Paint the first text box yellow since we start there
+        textFields[0].setBackground(Color.yellow);
+    }
+    
     /**
      * Method that deals with the painting of JTextFields based on selection and
      * answer arrays
      */
     private void paintingNew() {
-        if (selection[index] == answer[index]) { // Moving on
+        if (selection == answer[index]) // The player was correct, so let's move on
+        {
+            textFields[index].setText(options[answer[index]]);
+            textFields[index].setBackground(Color.green); // Turn the previous highlight green
             index++;
-            selection[index] = 0; // Setting to yellow
+            if (index == answer.length)
+            {
+                // Display a congratulatory text box here and ask the player if they want to return to the main menu or exit
+                JOptionPane.showMessageDialog(null, "Congratulations! You Completed The Kata!");
+                
+                int choice = JOptionPane.showOptionDialog(null,
+                        "Do You Want To Return To The Main Menu Or Exit The Game?",
+                        "Next Steps", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, messageoptions, null);
+                if (choice == 0)
+                {
+                    Main.display.DisplayMainMenu(false, true);
+                }
+                else
+                {
+                    // Kill all threads and exit
+                    try
+                    {
+                        Main.display.kill();
+                        JOptionPane.showMessageDialog(null, "Thanks For Playing!");
+                        System.exit(0);
+                    }
+                    catch (Exception closeException)
+                    {
+                        JOptionPane.showMessageDialog(null, "Something Went Wrong When Attempting To Kill Program Threads. Force Closing Program.");
+                        System.exit(0);
+                    }
+                }
+            }
+            else
+                textFields[index].setBackground(Color.yellow); // Highlight the next text box yellow
         }
-        /**
-         * The First one is the Line\Question A=1, B=2, C=3, D=4, E=5 and so on;
-         * The number is for the order of questions on that line. 1 is first 2
-         * second, 3 is third and so on
-         */
-        
-        A1.setText(options[selection[0]]);
-        A1.setBackground(getColor(0));
-        A2.setText(options[selection[1]]);
-        A2.setBackground(getColor(1));
-        A3.setText(options[selection[2]]);
-        A3.setBackground(getColor(2));
-        B1.setText(options[selection[3]]);
-        B1.setBackground(getColor(3));
-        B2.setText(options[selection[4]]);
-        B2.setBackground(getColor(4));
-        C1.setText(options[selection[5]]);
-        C1.setBackground(getColor(5));
-        C2.setText(options[selection[6]]);
-        C2.setBackground(getColor(6));
-        D1.setText(options[selection[7]]);
-        D1.setBackground(getColor(7));
-        D2.setText(options[selection[8]]);
-        D2.setBackground(getColor(8));
-        E1.setText(options[selection[9]]);
-        E1.setBackground(getColor(9));
-        F1.setText(options[selection[10]]);
-        F1.setBackground(getColor(10));
-        F2.setText(options[selection[11]]);
-        F2.setBackground(getColor(11));
-        F3.setText(options[selection[12]]);
-        F3.setBackground(getColor(12));
-        G1.setText(options[selection[13]]);
-        G1.setBackground(getColor(13));
-        G2.setText(options[selection[14]]);
-        G2.setBackground(getColor(14));
-        G3.setText(options[selection[15]]);
-        G3.setBackground(getColor(15));
-        H1.setText(options[selection[16]]);
-        H1.setBackground(getColor(16));
-        H2.setText(options[selection[17]]);
-        H2.setBackground(getColor(17));
-        H3.setText(options[selection[18]]);
-        H3.setBackground(getColor(18));
-        I1.setText(options[selection[19]]);
-        I1.setBackground(getColor(19));
-        I2.setText(options[selection[20]]);
-        I2.setBackground(getColor(20));
-        I3.setText(options[selection[21]]);
-        I3.setBackground(getColor(21));
-        I4.setText(options[selection[22]]);
-        I4.setBackground(getColor(22));
-        J1.setText(options[selection[23]]);
-        J1.setBackground(getColor(23));
-        J2.setText(options[selection[24]]);
-        J2.setBackground(getColor(24));
-        J3.setText(options[selection[25]]);
-        J3.setBackground(getColor(25));
-        J4.setText(options[selection[26]]);
-        J4.setBackground(getColor(26));
-        K1.setText(options[selection[27]]);
-        K1.setBackground(getColor(27));
-        K2.setText(options[selection[28]]);
-        K2.setBackground(getColor(28));
-        /* For debugging */
-        //       System.out.println(Arrays.toString(answer));
-        //     System.out.println(Arrays.toString(selection));
-        //       System.out.println(index);
-        /* For writting the JTextField code really quick */
- /*
-        for (int i = 1; i < 29; i++) { // Used to write the part above this
-            System.out.println("jTextField" + i + ".setText(options[selection[" + (i - 1) + "]]);");
-            System.out.println("jTextField" + i + ".setBackground(getColor(" + (i - 1) + "));");
-            System.out.print("0,"); // For the array
-        }
-         */
-
-//        System.out.println("FUCK YOU BROKE IT. I AM NOT THERE YET");
-    }
-
-    /**
-     * To decide what color each JTextField is going to be painted
-     *
-     * @param a
-     * @return
-     */
-    private Color getColor(int a) {
-        if (selection[a] == 7) {// Clear ones
-            return (new Color(204, 204, 204));
-        } else if (selection[a] == 0) { // Is the next one
-            return Color.YELLOW;
-        } else if (selection[a] == answer[a]) { // Right
-            return Color.GREEN;
-        } else { // Wrong
-            return Color.RED;
+        else // The player was wrong
+        {
+            textFields[index].setBackground(Color.red); // Set the highlight color to red
+            textFields[index].setText(options[selection]);
         }
     }
 
@@ -143,7 +107,9 @@ public class White1 extends javax.swing.JPanel {
         Kia4 = new javax.swing.JButton();
         Slide_Up5 = new javax.swing.JButton();
         Front6 = new javax.swing.JButton();
+        MainMenuButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         A1 = new javax.swing.JTextField();
         A2 = new javax.swing.JTextField();
         A3 = new javax.swing.JTextField();
@@ -190,7 +156,7 @@ public class White1 extends javax.swing.JPanel {
                 Reverse1MouseClicked(evt);
             }
         });
-        add(Reverse1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 170, 70));
+        add(Reverse1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 190, 60));
 
         Left2.setText("Left");
         Left2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -198,7 +164,7 @@ public class White1 extends javax.swing.JPanel {
                 Left2MouseClicked(evt);
             }
         });
-        add(Left2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 40, 170, 70));
+        add(Left2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, 190, 60));
 
         Right3.setText("Right");
         Right3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -206,7 +172,7 @@ public class White1 extends javax.swing.JPanel {
                 Right3MouseClicked(evt);
             }
         });
-        add(Right3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 40, 170, 70));
+        add(Right3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 70, 190, 60));
 
         Kia4.setText("Kia");
         Kia4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -214,7 +180,7 @@ public class White1 extends javax.swing.JPanel {
                 Kia4MouseClicked(evt);
             }
         });
-        add(Kia4, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 40, 170, 70));
+        add(Kia4, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 70, 190, 60));
 
         Slide_Up5.setText("Slide-Up");
         Slide_Up5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -222,7 +188,7 @@ public class White1 extends javax.swing.JPanel {
                 Slide_Up5MouseClicked(evt);
             }
         });
-        add(Slide_Up5, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 40, 170, 70));
+        add(Slide_Up5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 70, 190, 60));
 
         Front6.setText("Front");
         Front6.setActionCommand("Front");
@@ -231,133 +197,205 @@ public class White1 extends javax.swing.JPanel {
                 Front6MouseClicked(evt);
             }
         });
-        add(Front6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 40, 170, 70));
+        add(Front6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1300, 70, 190, 60));
+
+        MainMenuButton.setText("Back To Main Menu");
+        MainMenuButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MainMenuButtonMouseClicked(evt);
+            }
+        });
+        add(MainMenuButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 830, 300, 70));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Word Bank");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, 90, 40));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel3.setText("Steps For Kata Kee-Cho:");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(674, 160, 262, 40));
 
         A1.setEditable(false);
+        A1.setBackground(new java.awt.Color(204, 204, 204));
         A1.setText("Answer1");
+        A1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
         A1.setMaximumSize(new java.awt.Dimension(100, 100));
         A1.setMinimumSize(new java.awt.Dimension(10, 22));
-        add(A1, new org.netbeans.lib.awtextra.AbsoluteConstraints(168, 146, 63, -1));
+        add(A1, new org.netbeans.lib.awtextra.AbsoluteConstraints(168, 206, 63, -1));
 
         A2.setEditable(false);
+        A2.setBackground(new java.awt.Color(204, 204, 204));
         A2.setText("Answer2");
-        add(A2, new org.netbeans.lib.awtextra.AbsoluteConstraints(562, 146, 63, -1));
+        A2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        A2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        add(A2, new org.netbeans.lib.awtextra.AbsoluteConstraints(562, 206, 63, -1));
 
-        A3.setBackground(new java.awt.Color(240, 240, 240));
+        A3.setEditable(false);
+        A3.setBackground(new java.awt.Color(204, 204, 204));
         A3.setText("Answer3");
-        add(A3, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 146, 63, -1));
+        A3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(A3, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 206, 63, -1));
 
-        B1.setBackground(new java.awt.Color(240, 240, 240));
+        B1.setEditable(false);
+        B1.setBackground(new java.awt.Color(204, 204, 204));
         B1.setText("Answer4");
-        add(B1, new org.netbeans.lib.awtextra.AbsoluteConstraints(167, 190, 63, -1));
+        B1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(B1, new org.netbeans.lib.awtextra.AbsoluteConstraints(167, 250, 63, -1));
 
-        B2.setBackground(new java.awt.Color(240, 240, 240));
+        B2.setEditable(false);
+        B2.setBackground(new java.awt.Color(204, 204, 204));
         B2.setText("Answer5");
-        add(B2, new org.netbeans.lib.awtextra.AbsoluteConstraints(626, 190, 63, -1));
+        B2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(B2, new org.netbeans.lib.awtextra.AbsoluteConstraints(626, 250, 63, -1));
 
-        C1.setBackground(new java.awt.Color(240, 240, 240));
+        C1.setEditable(false);
+        C1.setBackground(new java.awt.Color(204, 204, 204));
         C1.setText("Answer6");
-        add(C1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 234, 63, -1));
+        C1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(C1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 294, 63, -1));
 
-        C2.setBackground(new java.awt.Color(240, 240, 240));
+        C2.setEditable(false);
+        C2.setBackground(new java.awt.Color(204, 204, 204));
         C2.setText("Answer7");
-        add(C2, new org.netbeans.lib.awtextra.AbsoluteConstraints(622, 234, 56, -1));
+        C2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(C2, new org.netbeans.lib.awtextra.AbsoluteConstraints(622, 294, 56, -1));
 
-        D1.setBackground(new java.awt.Color(240, 240, 240));
+        D1.setEditable(false);
+        D1.setBackground(new java.awt.Color(204, 204, 204));
         D1.setText("Answer8");
-        add(D1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 278, 63, -1));
+        D1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(D1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 338, 63, -1));
 
-        D2.setBackground(new java.awt.Color(240, 240, 240));
+        D2.setEditable(false);
+        D2.setBackground(new java.awt.Color(204, 204, 204));
         D2.setText("Answer9");
-        add(D2, new org.netbeans.lib.awtextra.AbsoluteConstraints(616, 278, 56, -1));
+        D2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(D2, new org.netbeans.lib.awtextra.AbsoluteConstraints(616, 338, 56, -1));
 
-        E1.setBackground(new java.awt.Color(240, 240, 240));
+        E1.setEditable(false);
+        E1.setBackground(new java.awt.Color(204, 204, 204));
         E1.setText("Answer10");
-        add(E1, new org.netbeans.lib.awtextra.AbsoluteConstraints(108, 323, 63, -1));
+        E1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(E1, new org.netbeans.lib.awtextra.AbsoluteConstraints(108, 383, 63, -1));
 
-        F1.setBackground(new java.awt.Color(240, 240, 240));
+        F1.setEditable(false);
+        F1.setBackground(new java.awt.Color(204, 204, 204));
         F1.setText("Answer11");
-        add(F1, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 367, 63, -1));
+        F1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(F1, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 427, 63, -1));
 
-        F2.setBackground(new java.awt.Color(240, 240, 240));
+        F2.setEditable(false);
+        F2.setBackground(new java.awt.Color(204, 204, 204));
         F2.setText("Answer12");
-        add(F2, new org.netbeans.lib.awtextra.AbsoluteConstraints(582, 367, 63, -1));
+        F2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(F2, new org.netbeans.lib.awtextra.AbsoluteConstraints(582, 427, 63, -1));
 
-        F3.setBackground(new java.awt.Color(240, 240, 240));
+        F3.setEditable(false);
+        F3.setBackground(new java.awt.Color(204, 204, 204));
         F3.setText("Answer13");
-        add(F3, new org.netbeans.lib.awtextra.AbsoluteConstraints(745, 367, 63, -1));
+        F3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(F3, new org.netbeans.lib.awtextra.AbsoluteConstraints(745, 427, 63, -1));
 
-        G1.setBackground(new java.awt.Color(240, 240, 240));
+        G1.setEditable(false);
+        G1.setBackground(new java.awt.Color(204, 204, 204));
         G1.setText("Answer14");
-        add(G1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 411, 63, -1));
+        G1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(G1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 471, 63, -1));
 
-        G2.setBackground(new java.awt.Color(240, 240, 240));
+        G2.setEditable(false);
+        G2.setBackground(new java.awt.Color(204, 204, 204));
         G2.setText("Answer15");
-        add(G2, new org.netbeans.lib.awtextra.AbsoluteConstraints(589, 411, 63, -1));
+        G2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(G2, new org.netbeans.lib.awtextra.AbsoluteConstraints(589, 471, 63, -1));
 
-        G3.setBackground(new java.awt.Color(240, 240, 240));
+        G3.setEditable(false);
+        G3.setBackground(new java.awt.Color(204, 204, 204));
         G3.setText("Answer16");
-        add(G3, new org.netbeans.lib.awtextra.AbsoluteConstraints(758, 411, 63, -1));
+        G3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(G3, new org.netbeans.lib.awtextra.AbsoluteConstraints(758, 471, 63, -1));
 
         H1.setEditable(false);
+        H1.setBackground(new java.awt.Color(204, 204, 204));
         H1.setText("Answer17");
-        add(H1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 455, 63, -1));
+        H1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(H1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 515, 63, -1));
 
-        H2.setBackground(new java.awt.Color(240, 240, 240));
+        H2.setEditable(false);
+        H2.setBackground(new java.awt.Color(204, 204, 204));
         H2.setText("Answer18");
-        add(H2, new org.netbeans.lib.awtextra.AbsoluteConstraints(585, 455, 63, -1));
+        H2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(H2, new org.netbeans.lib.awtextra.AbsoluteConstraints(585, 515, 63, -1));
 
-        H3.setBackground(new java.awt.Color(240, 240, 240));
+        H3.setEditable(false);
+        H3.setBackground(new java.awt.Color(204, 204, 204));
         H3.setText("Answer19");
-        add(H3, new org.netbeans.lib.awtextra.AbsoluteConstraints(755, 455, 63, -1));
+        H3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(H3, new org.netbeans.lib.awtextra.AbsoluteConstraints(755, 515, 63, -1));
 
-        I1.setBackground(new java.awt.Color(240, 240, 240));
+        I1.setEditable(false);
+        I1.setBackground(new java.awt.Color(204, 204, 204));
         I1.setText("Answer20");
-        add(I1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 499, 63, -1));
+        I1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(I1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 559, 63, -1));
 
-        I2.setBackground(new java.awt.Color(240, 240, 240));
+        I2.setEditable(false);
+        I2.setBackground(new java.awt.Color(204, 204, 204));
         I2.setText("Answer21");
-        add(I2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 499, 63, -1));
+        I2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(I2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 559, 63, -1));
 
-        I3.setBackground(new java.awt.Color(240, 240, 240));
+        I3.setEditable(false);
+        I3.setBackground(new java.awt.Color(204, 204, 204));
         I3.setText("Answer22");
-        add(I3, new org.netbeans.lib.awtextra.AbsoluteConstraints(655, 499, 63, -1));
+        I3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(I3, new org.netbeans.lib.awtextra.AbsoluteConstraints(655, 559, 63, -1));
 
-        I4.setBackground(new java.awt.Color(240, 240, 240));
+        I4.setEditable(false);
+        I4.setBackground(new java.awt.Color(204, 204, 204));
         I4.setText("Answer23");
-        add(I4, new org.netbeans.lib.awtextra.AbsoluteConstraints(828, 499, 63, -1));
+        I4.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(I4, new org.netbeans.lib.awtextra.AbsoluteConstraints(828, 559, 63, -1));
 
-        J1.setBackground(new java.awt.Color(240, 240, 240));
+        J1.setEditable(false);
+        J1.setBackground(new java.awt.Color(204, 204, 204));
         J1.setText("Answer24");
-        add(J1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 543, 63, -1));
+        J1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(J1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 603, 63, -1));
 
-        J2.setBackground(new java.awt.Color(240, 240, 240));
+        J2.setEditable(false);
+        J2.setBackground(new java.awt.Color(204, 204, 204));
         J2.setText("Answer25");
         J2.setToolTipText("");
-        add(J2, new org.netbeans.lib.awtextra.AbsoluteConstraints(595, 543, 63, -1));
+        J2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(J2, new org.netbeans.lib.awtextra.AbsoluteConstraints(595, 603, 63, -1));
 
-        J3.setBackground(new java.awt.Color(240, 240, 240));
+        J3.setEditable(false);
+        J3.setBackground(new java.awt.Color(204, 204, 204));
         J3.setText("Answer26");
-        add(J3, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 543, 63, -1));
+        J3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(J3, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 603, 63, -1));
 
-        J4.setBackground(new java.awt.Color(240, 240, 240));
+        J4.setEditable(false);
+        J4.setBackground(new java.awt.Color(204, 204, 204));
         J4.setText("Answer27");
-        add(J4, new org.netbeans.lib.awtextra.AbsoluteConstraints(825, 543, 63, -1));
+        J4.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(J4, new org.netbeans.lib.awtextra.AbsoluteConstraints(825, 603, 63, -1));
 
-        K1.setBackground(new java.awt.Color(240, 240, 240));
+        K1.setEditable(false);
+        K1.setBackground(new java.awt.Color(204, 204, 204));
         K1.setText("Answer28");
-        add(K1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 588, 63, -1));
+        K1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(K1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 648, 63, -1));
 
-        K2.setBackground(new java.awt.Color(240, 240, 240));
+        K2.setEditable(false);
+        K2.setBackground(new java.awt.Color(204, 204, 204));
         K2.setText("Answer29");
-        add(K2, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 588, 63, -1));
+        K2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(K2, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 648, 63, -1));
 
         jScrollPane1.setViewportBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
+        jTextArea1.setEditable(false);
         jTextArea1.setBackground(new java.awt.Color(204, 204, 204));
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -367,38 +405,48 @@ public class White1 extends javax.swing.JPanel {
         jTextArea1.setPreferredSize(new java.awt.Dimension(1400, 466));
         jScrollPane1.setViewportView(jTextArea1);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 1470, 480));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 1510, 600));
     }// </editor-fold>//GEN-END:initComponents
 
     private void Reverse1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Reverse1MouseClicked
-        selection[index] = 1;
+        selection = 1;
         paintingNew();
     }//GEN-LAST:event_Reverse1MouseClicked
 
     private void Left2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Left2MouseClicked
-        selection[index] = 2;
+        selection = 2;
         paintingNew();
     }//GEN-LAST:event_Left2MouseClicked
 
     private void Right3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Right3MouseClicked
-        selection[index] = 3;
+        selection = 3;
         paintingNew();
     }//GEN-LAST:event_Right3MouseClicked
 
     private void Kia4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Kia4MouseClicked
-        selection[index] = 4;
+        selection = 4;
         paintingNew();
     }//GEN-LAST:event_Kia4MouseClicked
 
     private void Slide_Up5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Slide_Up5MouseClicked
-        selection[index] = 5;
+        selection = 5;
         paintingNew();
     }//GEN-LAST:event_Slide_Up5MouseClicked
 
     private void Front6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Front6MouseClicked
-        selection[index] = 6;
+        selection = 6;
         paintingNew();
     }//GEN-LAST:event_Front6MouseClicked
+
+    private void MainMenuButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MainMenuButtonMouseClicked
+        int confirm = JOptionPane.showOptionDialog(null,
+                        "Are You Sure You Want To Return To The Main Menu? You Will Lose All Progress.",
+                        "Exit Confirmation", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+        if (confirm == 0)
+        {
+            Main.display.DisplayMainMenu(false, true);
+        }
+    }//GEN-LAST:event_MainMenuButtonMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -434,10 +482,12 @@ public class White1 extends javax.swing.JPanel {
     private javax.swing.JTextField K2;
     private javax.swing.JButton Kia4;
     private javax.swing.JButton Left2;
+    private javax.swing.JButton MainMenuButton;
     private javax.swing.JButton Reverse1;
     private javax.swing.JButton Right3;
     private javax.swing.JButton Slide_Up5;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables

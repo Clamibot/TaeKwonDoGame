@@ -20,7 +20,6 @@ public class Main {
 
     //Declare and initiailze all the objects and variables needed to run the game.
     public static GUI display = new GUI();//Create the graphics thread
-    public static White1 dis = new White1();
 
     /**
      * This is the main game thread.
