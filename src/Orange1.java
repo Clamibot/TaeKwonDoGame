@@ -124,7 +124,6 @@ public class Orange1 extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         Reverse1 = new javax.swing.JButton();
         Left2 = new javax.swing.JButton();
@@ -154,15 +153,18 @@ public class Orange1 extends javax.swing.JPanel {
         I2 = new javax.swing.JTextField();
         I3 = new javax.swing.JTextField();
         I4 = new javax.swing.JTextField();
+        I5 = new javax.swing.JTextField();
+        I6 = new javax.swing.JTextField();
+        I7 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
 
         setBackground(new java.awt.Color(204, 204, 204));
-        setMaximumSize(new java.awt.Dimension(2400, 1000));
-        setMinimumSize(new java.awt.Dimension(1600, 900));
+        setMaximumSize(new java.awt.Dimension(1610, 910));
+        setMinimumSize(new java.awt.Dimension(1610, 910));
         setName("White Belt"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(1600, 900));
-        setLayout(new java.awt.GridBagLayout());
+        setPreferredSize(new java.awt.Dimension(1610, 910));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Reverse1.setBackground(new java.awt.Color(0, 240, 240));
         Reverse1.setText("Reverse");
@@ -181,16 +183,7 @@ public class Orange1 extends javax.swing.JPanel {
                 Reverse1ActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 117;
-        gridBagConstraints.ipady = 22;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(8, 80, 0, 0);
-        add(Reverse1, gridBagConstraints);
+        add(Reverse1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 68, 190, 45));
 
         Left2.setText("Left");
         Left2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -203,16 +196,7 @@ public class Orange1 extends javax.swing.JPanel {
                 Left2ActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 8;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 143;
-        gridBagConstraints.ipady = 22;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(8, 14, 0, 0);
-        add(Left2, gridBagConstraints);
+        add(Left2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 68, 194, 45));
 
         Right3.setText("Right");
         Right3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -220,16 +204,7 @@ public class Orange1 extends javax.swing.JPanel {
                 Right3MouseClicked(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 14;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 145;
-        gridBagConstraints.ipady = 22;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(8, 40, 0, 0);
-        add(Right3, gridBagConstraints);
+        add(Right3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 68, 202, 45));
 
         Kia4.setText("Kia");
         Kia4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -237,29 +212,16 @@ public class Orange1 extends javax.swing.JPanel {
                 Kia4MouseClicked(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 28;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 24;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 98;
-        gridBagConstraints.ipady = 22;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(8, 7, 0, 0);
-        add(Kia4, gridBagConstraints);
+        add(Kia4, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 68, 145, 45));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Word Bank");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 10;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(13, 53, 0, 0);
-        add(jLabel2, gridBagConstraints);
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(523, 13, -1, -1));
 
         A1.setEditable(false);
+        A1.setBackground(new java.awt.Color(204, 204, 204));
         A1.setText("Answer1");
+        A1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
         A1.setMaximumSize(new java.awt.Dimension(100, 100));
         A1.setMinimumSize(new java.awt.Dimension(10, 22));
         A1.addActionListener(new java.awt.event.ActionListener() {
@@ -267,287 +229,182 @@ public class Orange1 extends javax.swing.JPanel {
                 A1ActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 46;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(8, 70, 0, 0);
-        add(A1, gridBagConstraints);
+        add(A1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 204, 63, -1));
 
-        A2.setBackground(new java.awt.Color(240, 240, 240));
+        A2.setEditable(false);
+        A2.setBackground(new java.awt.Color(204, 204, 204));
         A2.setText("Answer2");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 54;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(8, 4, 0, 0);
-        add(A2, gridBagConstraints);
+        A2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(A2, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 204, 63, -1));
 
-        A3.setBackground(new java.awt.Color(240, 240, 240));
+        A3.setEditable(false);
+        A3.setBackground(new java.awt.Color(204, 204, 204));
         A3.setText("Answer3");
+        A3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
         A3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 A3ActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.ipadx = 50;
-        gridBagConstraints.ipady = -2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(8, 10, 0, 0);
-        add(A3, gridBagConstraints);
+        add(A3, new org.netbeans.lib.awtextra.AbsoluteConstraints(557, 204, 63, -1));
 
-        B2.setBackground(new java.awt.Color(240, 240, 240));
+        B2.setEditable(false);
+        B2.setBackground(new java.awt.Color(204, 204, 204));
         B2.setText("Answer5");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 8;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.ipadx = 50;
-        gridBagConstraints.ipady = -2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(8, 14, 0, 0);
-        add(B2, gridBagConstraints);
+        B2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(B2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 249, 63, -1));
 
-        C1.setBackground(new java.awt.Color(240, 240, 240));
+        C1.setEditable(false);
+        C1.setBackground(new java.awt.Color(204, 204, 204));
         C1.setText("Answer6");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 9;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.ipadx = 54;
-        gridBagConstraints.ipady = -2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(8, 14, 0, 0);
-        add(C1, gridBagConstraints);
+        C1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(C1, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 248, 63, -1));
 
-        C2.setBackground(new java.awt.Color(240, 240, 240));
+        C2.setEditable(false);
+        C2.setBackground(new java.awt.Color(204, 204, 204));
         C2.setText("Answer7");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 10;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 50;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(8, 10, 0, 0);
-        add(C2, gridBagConstraints);
+        C2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(C2, new org.netbeans.lib.awtextra.AbsoluteConstraints(559, 248, 63, -1));
 
-        D1.setBackground(new java.awt.Color(240, 240, 240));
+        D1.setEditable(false);
+        D1.setBackground(new java.awt.Color(204, 204, 204));
         D1.setText("Answer8");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 12;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 50;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(8, 14, 0, 0);
-        add(D1, gridBagConstraints);
+        D1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        D1.setVerifyInputWhenFocusTarget(false);
+        add(D1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 292, 63, -1));
 
-        B1.setBackground(new java.awt.Color(240, 240, 240));
+        B1.setEditable(false);
+        B1.setBackground(new java.awt.Color(204, 204, 204));
         B1.setText("Answer4");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 5;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 50;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(8, 14, 0, 0);
-        add(B1, gridBagConstraints);
+        B1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(B1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 204, 63, -1));
 
-        D2.setBackground(new java.awt.Color(240, 240, 240));
+        D2.setEditable(false);
+        D2.setBackground(new java.awt.Color(204, 204, 204));
         D2.setText("Answer9");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 14;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 50;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(8, 10, 0, 0);
-        add(D2, gridBagConstraints);
+        D2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(D2, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 292, 63, -1));
 
-        E1.setBackground(new java.awt.Color(240, 240, 240));
+        E1.setEditable(false);
+        E1.setBackground(new java.awt.Color(204, 204, 204));
         E1.setText("Answer10");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 15;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 64;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(8, 4, 0, 0);
-        add(E1, gridBagConstraints);
+        E1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(E1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1048, 315, 63, -1));
 
-        F1.setBackground(new java.awt.Color(240, 240, 240));
+        F1.setEditable(false);
+        F1.setBackground(new java.awt.Color(204, 204, 204));
         F1.setText("Answer11");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 16;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 57;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(8, 10, 0, 0);
-        add(F1, gridBagConstraints);
+        F1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(F1, new org.netbeans.lib.awtextra.AbsoluteConstraints(157, 336, 63, -1));
 
-        F2.setBackground(new java.awt.Color(240, 240, 240));
+        F2.setEditable(false);
+        F2.setBackground(new java.awt.Color(204, 204, 204));
         F2.setText("Answer12");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 17;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 5;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 57;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(8, 7, 0, 0);
-        add(F2, gridBagConstraints);
+        F2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(F2, new org.netbeans.lib.awtextra.AbsoluteConstraints(607, 336, 63, -1));
 
-        F3.setBackground(new java.awt.Color(240, 240, 240));
+        F3.setEditable(false);
+        F3.setBackground(new java.awt.Color(204, 204, 204));
         F3.setText("Answer13");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 22;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 7;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 57;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(8, 7, 0, 0);
-        add(F3, gridBagConstraints);
+        F3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(F3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 358, 63, -1));
 
-        G1.setBackground(new java.awt.Color(240, 240, 240));
+        G1.setEditable(false);
+        G1.setBackground(new java.awt.Color(204, 204, 204));
         G1.setText("Answer14");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 35;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 9;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 57;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(8, 7, 0, 0);
-        add(G1, gridBagConstraints);
+        G1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(G1, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 380, 63, -1));
 
-        G2.setBackground(new java.awt.Color(240, 240, 240));
+        G2.setEditable(false);
+        G2.setBackground(new java.awt.Color(204, 204, 204));
         G2.setText("Answer15");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 51;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 33;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 57;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(8, 7, 0, 0);
-        add(G2, gridBagConstraints);
+        G2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(G2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 380, 63, -1));
 
-        G3.setBackground(new java.awt.Color(240, 240, 240));
+        G3.setEditable(false);
+        G3.setBackground(new java.awt.Color(204, 204, 204));
         G3.setText("Answer16");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 116;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 35;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 57;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(8, 7, 0, 0);
-        add(G3, gridBagConstraints);
+        G3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(G3, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 402, 63, -1));
 
         H1.setEditable(false);
+        H1.setBackground(new java.awt.Color(204, 204, 204));
         H1.setText("Answer17");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 83;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 34;
-        gridBagConstraints.gridheight = 3;
-        gridBagConstraints.ipadx = 57;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(8, 17, 0, 0);
-        add(H1, gridBagConstraints);
+        H1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(H1, new org.netbeans.lib.awtextra.AbsoluteConstraints(379, 402, 63, -1));
 
-        H2.setBackground(new java.awt.Color(240, 240, 240));
+        H2.setEditable(false);
+        H2.setBackground(new java.awt.Color(204, 204, 204));
         H2.setText("Answer18");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 83;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 34;
-        gridBagConstraints.ipadx = 57;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(8, 17, 0, 0);
-        add(H2, gridBagConstraints);
+        H2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(H2, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 424, 63, -1));
 
-        H3.setBackground(new java.awt.Color(240, 240, 240));
+        H3.setEditable(false);
+        H3.setBackground(new java.awt.Color(204, 204, 204));
         H3.setText("Answer19");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 83;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 34;
-        gridBagConstraints.ipadx = 57;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(5, 17, 0, 0);
-        add(H3, gridBagConstraints);
+        H3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(H3, new org.netbeans.lib.awtextra.AbsoluteConstraints(334, 446, 63, -1));
 
-        I1.setBackground(new java.awt.Color(240, 240, 240));
+        I1.setEditable(false);
+        I1.setBackground(new java.awt.Color(204, 204, 204));
         I1.setText("Answer20");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 43;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 32;
-        gridBagConstraints.ipadx = 57;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(5, 27, 0, 0);
-        add(I1, gridBagConstraints);
+        I1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(I1, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 468, 63, -1));
 
-        I2.setBackground(new java.awt.Color(240, 240, 240));
+        I2.setEditable(false);
+        I2.setBackground(new java.awt.Color(204, 204, 204));
         I2.setText("Answer21");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 28;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 8;
-        gridBagConstraints.ipadx = 57;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(5, 17, 0, 0);
-        add(I2, gridBagConstraints);
+        I2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(I2, new org.netbeans.lib.awtextra.AbsoluteConstraints(328, 491, 63, -1));
 
-        I3.setBackground(new java.awt.Color(240, 240, 240));
+        I3.setEditable(false);
+        I3.setBackground(new java.awt.Color(204, 204, 204));
         I3.setText("Answer22");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 17;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 6;
-        gridBagConstraints.ipadx = 57;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(5, 17, 0, 0);
-        add(I3, gridBagConstraints);
+        I3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(I3, new org.netbeans.lib.awtextra.AbsoluteConstraints(598, 512, 63, -1));
 
-        I4.setBackground(new java.awt.Color(240, 240, 240));
+        I4.setEditable(false);
+        I4.setBackground(new java.awt.Color(204, 204, 204));
         I4.setText("Answer23");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 16;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.ipadx = 57;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(5, 10, 0, 0);
-        add(I4, gridBagConstraints);
+        I4.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(I4, new org.netbeans.lib.awtextra.AbsoluteConstraints(598, 535, 63, -1));
+
+        I5.setEditable(false);
+        I5.setBackground(new java.awt.Color(204, 204, 204));
+        I5.setText("Answer24");
+        I5.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        add(I5, new org.netbeans.lib.awtextra.AbsoluteConstraints(598, 557, 63, -1));
+
+        I6.setEditable(false);
+        I6.setBackground(new java.awt.Color(204, 204, 204));
+        I6.setText("Answer25");
+        I6.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        I6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                I6ActionPerformed(evt);
+            }
+        });
+        add(I6, new org.netbeans.lib.awtextra.AbsoluteConstraints(598, 580, 63, -1));
+
+        I7.setEditable(false);
+        I7.setBackground(new java.awt.Color(204, 204, 204));
+        I7.setText("Answer26");
+        I7.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        I7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                I7ActionPerformed(evt);
+            }
+        });
+        add(I7, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 602, 63, -1));
 
         jTextArea1.setBackground(new java.awt.Color(204, 204, 204));
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setText("1. ______ Block Into A ____ Side Fighting Stance Facing Your ____ And Say ___.\n2. Point Forward, Step Forward Into A Forebalance, And Punch.\n3. ______ Block Into A ____ Side Fighting Stance Facing Your ____.\n4. Point Forward, Step Forward Into A Forebalance, And Punch.\n5. ______ Block Into A ____ Side Forebalance Facing The Front.\n6. Point Forward, Step Forward And Punch, Step Forward And Punch Again, Step Forward And Punch A Third Time, Then Say ___.\n7. Fold For A ___ Block, Spin 27Degrees To Your Left, And Do A ___ Block.\n8. Point And Chamber, Step Forward Into A _____ Side Forebalance, And Punch.\n9. Do A ___ Block To The Other Side, Point And Chamber, Step Forward Into A _____ Side Forebalance, And Punch. \n10. Do A ___ Block To The Back In A ____ Side Forebalance.\n11. With The Same Hand You Did A Low Block With, Do A ____ Block.\n12. Step Forward And Do A Second ____ Block.\n13. Step Forward And Do A Third ____ Block.\n14. Step Forward And Do A Fourth ____ Block.\n15. Fold For A Chop, Spin 18Degrees To Your Left, And Chop In A _____ Stance.\n16. Close Your Hand Into A Fist, Then Step Forward And Punch In A _____ Side Forebalance.\n17. Fold For A Chop, Spin 9Degrees To Your Right, And Chop In A _____ Stance.\n18. Close Your Hand Into A Fist, Then Step Forward And Punch In A ____ Side Forebalance.\n19. Say ___.\n");
+        jTextArea1.setText("1.           Block Into A           Side Fighting Stance Facing Your           And Say           .\n2. Point Forward, Step Forward Into A Forebalance, And Punch.\n3.           Block Into A           Side Fighting Stance Facing Your           .\n4. Point Forward, Step Forward Into A Forebalance, And Punch.\n5.           Block Into A           Side Forebalance Facing The Front.\n6. Point Forward, Step Forward And Punch, Step Forward And Punch Again, Step Forward And Punch A Third Time, Then Say           .\n7. Fold For A           Block, Spin 270 Degrees To Your Left, And Do A           Block.\n8. Point And Chamber, Step Forward Into A           Side Forebalance, And Punch.\n9. Do A           Block To The Other Side, Point And Chamber, Step Forward Into A           Side Forebalance, And Punch. \n10. Do A           Block To The Back In A           Side Forebalance.\n11. With The Same Hand You Did A Low Block With, Do A           Block.\n12. Step Forward And Do A Second           Block.\n13. Step Forward And Do A Third           Block.\n14. Step Forward And Do A Fourth           Block.\n15. Fold For A Chop, Spin 180 Degrees To Your Left, And Chop In A           Stance.\n16. Close Your Hand Into A Fist, Then Step Forward And Punch In A           Side Forebalance.\n17. Fold For A Chop, Spin 90 Degrees To Your Right, And Chop In A           Stance.\n18. Close Your Hand Into A Fist, Then Step Forward And Punch In A           Side Forebalance.\n19. Say           .\n");
         jScrollPane1.setViewportView(jTextArea1);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.gridwidth = 152;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 1093;
-        gridBagConstraints.ipady = 583;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(18, 70, 0, 64);
-        add(jScrollPane1, gridBagConstraints);
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 1510, 650));
     }// </editor-fold>//GEN-END:initComponents
 
     private void Reverse1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Reverse1ActionPerformed
@@ -594,6 +451,14 @@ public class Orange1 extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_A3ActionPerformed
 
+    private void I6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_I6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_I6ActionPerformed
+
+    private void I7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_I7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_I7ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField A1;
@@ -619,6 +484,9 @@ public class Orange1 extends javax.swing.JPanel {
     private javax.swing.JTextField I2;
     private javax.swing.JTextField I3;
     private javax.swing.JTextField I4;
+    private javax.swing.JTextField I5;
+    private javax.swing.JTextField I6;
+    private javax.swing.JTextField I7;
     private javax.swing.JButton Kia4;
     private javax.swing.JButton Left2;
     private javax.swing.JButton Reverse1;

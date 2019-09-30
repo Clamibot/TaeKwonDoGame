@@ -201,7 +201,6 @@ public class White1 extends javax.swing.JPanel {
         add(Slide_Up5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 70, 190, 60));
 
         Front6.setText("Front");
-        Front6.setActionCommand("Front");
         Front6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Front6MouseClicked(evt);
@@ -415,7 +414,7 @@ public class White1 extends javax.swing.JPanel {
         jTextArea1.setPreferredSize(new java.awt.Dimension(1400, 466));
         jScrollPane1.setViewportView(jTextArea1);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 1510, 600));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 1510, 650));
     }// </editor-fold>//GEN-END:initComponents
 
     private void Reverse1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Reverse1MouseClicked
