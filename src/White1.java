@@ -17,7 +17,7 @@ public class White1 extends javax.swing.JPanel {
     private String options[] = {" ", "Reverse", "Left", "Right", "Kia", "Slide-Up", "Front", ""}; // The options to choose
     private JTextField textFields[];
     public JFrame messages = new JFrame("JOptionPane showMessageDialog example");
-    public Object messageoptions[] = {"Exit To Main Menu", "Quit Game", "Go To Kata Chun-G"};
+    public Object messageoptions[] = {"Exit To Main Menu", "Quit Game"};
 // This also means that 0 is nothing, 1 is reverse, 2 is left, 3 is right and 4 Kia in the selection array.
 
     /**
@@ -60,13 +60,13 @@ public class White1 extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "Congratulations! You Completed The Kata!");
                 
                 int choice = JOptionPane.showOptionDialog(null,
-                        "Do You Want To Return To The Main Menu, Exit The Game, Or Go To The Next Kata?",
-                        "Next Steps", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, messageoptions, null);
-                if (choice == 0) // Player wants to exit to the main menu
+                        "Do You Want To Return To The Main Menu Or Exit The Game?",
+                        "Next Steps", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, messageoptions, null);
+                if (choice == 0)
                 {
                     Main.display.DisplayMainMenu(false, true);
                 }
-                else if (choice == 1) // Player wants to exit the game
+                else
                 {
                     // Kill all threads and exit
                     try
@@ -80,16 +80,6 @@ public class White1 extends javax.swing.JPanel {
                         JOptionPane.showMessageDialog(null, "Something Went Wrong When Attempting To Kill Program Threads. Force Closing Program.");
                         System.exit(0);
                     }
-                }
-                else if (choice == 2) // Player wants to go to the next kata
-                {
-                    Main.display.kataContentPane.removeAll();
-                    Main.display.kataContentPane.add(new Gold1());
-                    Main.display.displaywindow.pack();
-                }
-                else // Epic program fail
-                {
-                    
                 }
             }
             else
