@@ -64,7 +64,7 @@ public class Gold1 extends javax.swing.JPanel {
                         "Next Steps", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, messageoptions, null);
                 if (choice == 0)
                 {
-                    Main.display.DisplayMainMenu(false, true);
+                    Main.display.DisplayMainMenu(false, true, false);
                 }
                 else
                 {
@@ -386,7 +386,7 @@ public class Gold1 extends javax.swing.JPanel {
             "Exit Confirmation", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
         if (confirm == 0)
         {
-            Main.display.DisplayMainMenu(false, true);
+            Main.display.DisplayMainMenu(false, true, false);
         }
     }//GEN-LAST:event_MainMenuButtonMouseClicked
 

@@ -136,7 +136,7 @@ public class GUI extends Thread {
         brown_belt_button.setBounds(1270, 190, 300, 79);
         black_belt_button.setBounds(1270, 340, 300, 79);
 
-        DisplayMainMenu(true, false);
+        DisplayMainMenu(true, false, false);
     }
 
     /**
@@ -147,7 +147,7 @@ public class GUI extends Thread {
         main_menu_button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                Main.display.DisplayMainMenu(false, false);
+                Main.display.DisplayMainMenu(false, false, false);
             }
         });
         white_belt_button.addMouseListener(new MouseAdapter() {
@@ -173,19 +173,31 @@ public class GUI extends Thread {
         orange_belt_button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                //Main.display.DisplayKata3();
+                displaywindow.remove(contentPane);
+                kataContentPane.removeAll();
+                kataContentPane.add(new Orange1());
+                displaywindow.add(kataContentPane);
+                displaywindow.pack();
             }
         });
         purple_belt_button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                //Main.display.DisplayKata4();
+                displaywindow.remove(contentPane);
+                kataContentPane.removeAll();
+                kataContentPane.add(new Purple1());
+                displaywindow.add(kataContentPane);
+                displaywindow.pack();
             }
         });
         green_belt_button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                //Main.display.DisplayKata5();
+                displaywindow.remove(contentPane);
+                kataContentPane.removeAll();
+                kataContentPane.add(new Green1());
+                displaywindow.add(kataContentPane);
+                displaywindow.pack();
             }
         });
         blue_belt_button.addMouseListener(new MouseAdapter() {
@@ -209,7 +221,11 @@ public class GUI extends Thread {
         black_belt_button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                //Main.display.DisplayKata13();
+                displaywindow.remove(contentPane);
+                kataContentPane.removeAll();
+                kataContentPane.add(new Black1());
+                displaywindow.add(kataContentPane);
+                displaywindow.pack();
             }
         });
     }
@@ -219,16 +235,36 @@ public class GUI extends Thread {
      *
      * @param displayIntroText Whether the intro text should be displayed or not.
      * @param comingFromKataFrame Whether we're exiting to the main menu from a kata frame or not.
+     * @param redrawMainMenu Tells the function whether to redraw the main menu or not. Set to true when the previous menu page visited was not the main menu.
      */
-    public void DisplayMainMenu(boolean displayIntroText, boolean comingFromKataFrame) {
+    public void DisplayMainMenu(boolean displayIntroText, boolean comingFromKataFrame, boolean redrawMainMenu) {
         // Clear the previous scene and prep for the new one
         if (comingFromKataFrame) // Just reproject the main menu since we didn't modify its panel
         {
             displaywindow.remove(kataContentPane);
             displaywindow.add(contentPane);
+            if (redrawMainMenu)
+            {
+                contentPane.removeAll();
+                // Move the text output box
+                output.setBounds(490, 520, 645, 50);
+
+                // Add components to the contentPane panel
+                contentPane.add(output);
+                contentPane.add(background);
+                contentPane.add(white_belt_button);
+                contentPane.add(gold_belt_button);
+                contentPane.add(orange_belt_button);
+                contentPane.add(purple_belt_button);
+                contentPane.add(green_belt_button);
+                contentPane.add(blue_belt_button);
+                contentPane.add(red_belt_button);
+                contentPane.add(brown_belt_button);
+                contentPane.add(black_belt_button);
+            }
             contentPane.repaint();
         }
-        else // Redraw the panel since we modified it
+        else // Redraw the menu content panel since we modified it
         {
             contentPane.removeAll();
             // Move the text output box
@@ -327,13 +363,21 @@ public class GUI extends Thread {
         blue_belt_button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                //Main.display.DisplayKata6();
+                displaywindow.remove(contentPane);
+                kataContentPane.removeAll();
+                kataContentPane.add(new Blue1());
+                displaywindow.add(kataContentPane);
+                displaywindow.pack();
             }
         });
         blue_belt_button2.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                //Main.display.DisplayKata7();
+                displaywindow.remove(contentPane);
+                kataContentPane.removeAll();
+                kataContentPane.add(new Blue2());
+                displaywindow.add(kataContentPane);
+                displaywindow.pack();
             }
         });
 
@@ -374,13 +418,21 @@ public class GUI extends Thread {
         red_belt_button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                //Main.display.DisplayKata8();
+                displaywindow.remove(contentPane);
+                kataContentPane.removeAll();
+                kataContentPane.add(new Red1());
+                displaywindow.add(kataContentPane);
+                displaywindow.pack();
             }
         });
         red_belt_button2.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                //Main.display.DisplayKata9();
+                displaywindow.remove(contentPane);
+                kataContentPane.removeAll();
+                kataContentPane.add(new Red2());
+                displaywindow.add(kataContentPane);
+                displaywindow.pack();
             }
         });
 
@@ -428,19 +480,31 @@ public class GUI extends Thread {
         brown_belt_button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                //Main.display.DisplayKata10();
+                displaywindow.remove(contentPane);
+                kataContentPane.removeAll();
+                kataContentPane.add(new Brown1());
+                displaywindow.add(kataContentPane);
+                displaywindow.pack();
             }
         });
         brown_belt_button2.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                //Main.display.DisplayKata11();
+                displaywindow.remove(contentPane);
+                kataContentPane.removeAll();
+                kataContentPane.add(new Brown2());
+                displaywindow.add(kataContentPane);
+                displaywindow.pack();
             }
         });
         brown_belt_button3.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                //Main.display.DisplayKata12();
+                displaywindow.remove(contentPane);
+                kataContentPane.removeAll();
+                kataContentPane.add(new Brown3());
+                displaywindow.add(kataContentPane);
+                displaywindow.pack();
             }
         });
 
