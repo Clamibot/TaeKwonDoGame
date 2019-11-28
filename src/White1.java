@@ -9,16 +9,13 @@ import javax.swing.JTextField;
  * @author MasterWard
  */
 public class White1 extends javax.swing.JPanel {
-
-    // private String ans[] = {"Reverse", "Left", "Kia", "Reverse", "Right", "Reverse", "Left", "Reverse", "Reverse", "Reverse", "Reverse"}; // FOr debugging can delete later
-    private int answer[] = {2, 4, 1, 3, 1, 2, 1, 3, 1, 4, 2, 6, 1, 3, 6, 1, 2, 6, 1, 3, 5, 6, 1, 2, 5, 6, 1, 3, 4}; // Answers in int form
+    private int answer[] = {2, 4, 1, 3, 1, 2, 1, 3, 1, 4, 2, 6, 1, 3, 6, 1, 2, 6, 1, 3, 5, 6, 1, 2, 5, 6, 1, 3, 4}; // Answers in int form. These reflect the indices of the options array.
     private int selection = 0; // Variable that holds the player's response to a highlighted section of the text
     private int index = 0; // Index of answers on
     private String options[] = {" ", "Reverse", "Left", "Right", "Kia", "Slide-Up", "Front", ""}; // The options to choose
     private JTextField textFields[];
     public JFrame messages = new JFrame("JOptionPane showMessageDialog example");
     public Object messageoptions[] = {"Exit To Main Menu", "Quit Game"};
-// This also means that 0 is nothing, 1 is reverse, 2 is left, 3 is right and 4 Kia in the selection array.
 
     /**
      * White belt Interactive Form

@@ -107,7 +107,6 @@
     <Component class="javax.swing.JButton" name="Front6">
       <Properties>
         <Property name="text" type="java.lang.String" value="Front"/>
-        <Property name="actionCommand" type="java.lang.String" value="Front"/>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Front6MouseClicked"/>

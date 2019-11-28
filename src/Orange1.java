@@ -9,16 +9,13 @@ import javax.swing.JTextField;
  * @author MasterWard
  */
 public class Orange1 extends javax.swing.JPanel {
-
-    // private String ans[] = {"Reverse", "Left", "Kia", "Reverse", "Right", "Reverse", "Left", "Reverse", "Reverse", "Reverse", "Reverse"}; // FOr debugging can delete later
-    private int answer[] = {2, 4, 1, 3, 1, 2, 1, 3, 1, 4, 2, 1, 2, 3, 4, 3, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2}; // Answers in int form
+    private int answer[] = {4, 1, 1, 3, 4, 2, 2, 5, 1, 3, 6, 6, 2, 6, 1, 5, 1, 7, 7, 7, 7, 8, 2, 8, 1, 3}; // Answers in int form. These reflect the indices of the options array.
     private int selection = 0; // Variable that holds the player's response to a highlighted section of the text
     private int index = 0; // Index of answers on
-    private String options[] = {" ", "Reverse", "Left", "Right", "Kia", "", "", ""}; // The options to choose
+    private String options[] = {" ", "Left", "Right", "Kia", "Pseudo", "Low", "Box", "High", "Horse"}; // The options to choose
     private JTextField textFields[];
     public JFrame messages = new JFrame("JOptionPane showMessageDialog example");
     public Object messageoptions[] = {"Exit To Main Menu", "Quit Game"};
-// This also means that 0 is nothing, 1 is reverse, 2 is left, 3 is right and 4 Kia in the selection array.
 
     /**
      * White belt Interactive Form
@@ -101,12 +98,17 @@ public class Orange1 extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Reverse1 = new javax.swing.JButton();
-        Left2 = new javax.swing.JButton();
-        Right3 = new javax.swing.JButton();
-        Kia4 = new javax.swing.JButton();
+        Left1 = new javax.swing.JButton();
+        Right2 = new javax.swing.JButton();
+        Kia3 = new javax.swing.JButton();
+        Pseudo4 = new javax.swing.JButton();
+        Low5 = new javax.swing.JButton();
+        Box6 = new javax.swing.JButton();
+        High7 = new javax.swing.JButton();
+        Horse8 = new javax.swing.JButton();
         MainMenuButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         A1 = new javax.swing.JTextField();
         A2 = new javax.swing.JTextField();
         A3 = new javax.swing.JTextField();
@@ -143,53 +145,69 @@ public class Orange1 extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1610, 910));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Reverse1.setBackground(new java.awt.Color(0, 240, 240));
-        Reverse1.setText("Reverse");
-        Reverse1.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                Reverse1ItemStateChanged(evt);
-            }
-        });
-        Reverse1.addMouseListener(new java.awt.event.MouseAdapter() {
+        Left1.setText("Left");
+        Left1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Reverse1MouseClicked(evt);
+                Left1MouseClicked(evt);
             }
         });
-        Reverse1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Reverse1ActionPerformed(evt);
-            }
-        });
-        add(Reverse1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 68, 190, 45));
+        add(Left1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 140, 60));
 
-        Left2.setText("Left");
-        Left2.addMouseListener(new java.awt.event.MouseAdapter() {
+        Right2.setText("Right");
+        Right2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Left2MouseClicked(evt);
+                Right2MouseClicked(evt);
             }
         });
-        Left2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Left2ActionPerformed(evt);
-            }
-        });
-        add(Left2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 68, 194, 45));
+        add(Right2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 140, 60));
 
-        Right3.setText("Right");
-        Right3.addMouseListener(new java.awt.event.MouseAdapter() {
+        Kia3.setText("Kia");
+        Kia3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Right3MouseClicked(evt);
+                Kia3MouseClicked(evt);
             }
         });
-        add(Right3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 68, 202, 45));
+        add(Kia3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 70, 140, 60));
 
-        Kia4.setText("Kia");
-        Kia4.addMouseListener(new java.awt.event.MouseAdapter() {
+        Pseudo4.setText("Pseudo");
+        Pseudo4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Kia4MouseClicked(evt);
+                Pseudo4MouseClicked(evt);
             }
         });
-        add(Kia4, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 68, 145, 45));
+        add(Pseudo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 70, 140, 60));
+
+        Low5.setText("Low");
+        Low5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Low5MouseClicked(evt);
+            }
+        });
+        add(Low5, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 70, 140, 60));
+
+        Box6.setText("Box");
+        Box6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Box6MouseClicked(evt);
+            }
+        });
+        add(Box6, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 70, 140, 60));
+
+        High7.setText("High");
+        High7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                High7MouseClicked(evt);
+            }
+        });
+        add(High7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 70, 140, 60));
+
+        Horse8.setText("Horse");
+        Horse8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Horse8MouseClicked(evt);
+            }
+        });
+        add(Horse8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 70, 140, 60));
 
         MainMenuButton.setText("Back To Main Menu");
         MainMenuButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -201,7 +219,11 @@ public class Orange1 extends javax.swing.JPanel {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Word Bank");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(523, 13, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, 90, 40));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel3.setText("Steps For Kata Tangoon:");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(665, 160, 280, 40));
 
         A1.setEditable(false);
         A1.setBackground(new java.awt.Color(204, 204, 204));
@@ -392,42 +414,6 @@ public class Orange1 extends javax.swing.JPanel {
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 1510, 650));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Reverse1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Reverse1ActionPerformed
-
-    }//GEN-LAST:event_Reverse1ActionPerformed
-
-    private void Left2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Left2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Left2ActionPerformed
-
-    private void Reverse1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Reverse1ItemStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Reverse1ItemStateChanged
-
-    private void Reverse1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Reverse1MouseClicked
-        //  System.out.println("Clicked reverse when the answer is " + ans[index]);
-        selection = 1;
-        paintingNew();
-    }//GEN-LAST:event_Reverse1MouseClicked
-
-    private void Left2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Left2MouseClicked
-        //  System.out.println("Clicked Left when the answer is " + ans[index]);
-        selection = 2;
-        paintingNew();
-    }//GEN-LAST:event_Left2MouseClicked
-
-    private void Right3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Right3MouseClicked
-        //    System.out.println("Clicked Right when the answer is " + ans[index]);
-        selection = 3;
-        paintingNew();
-    }//GEN-LAST:event_Right3MouseClicked
-
-    private void Kia4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Kia4MouseClicked
-        //  System.out.println("Clicked Kia when the answer is " + ans[index]);
-        selection = 4;
-        paintingNew();
-    }//GEN-LAST:event_Kia4MouseClicked
-
     private void A1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_A1ActionPerformed
@@ -454,6 +440,46 @@ public class Orange1 extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_MainMenuButtonMouseClicked
 
+    private void Left1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Left1MouseClicked
+        selection = 1;
+        paintingNew();
+    }//GEN-LAST:event_Left1MouseClicked
+
+    private void Right2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Right2MouseClicked
+        selection = 2;
+        paintingNew();
+    }//GEN-LAST:event_Right2MouseClicked
+
+    private void Kia3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Kia3MouseClicked
+        selection = 3;
+        paintingNew();
+    }//GEN-LAST:event_Kia3MouseClicked
+
+    private void Pseudo4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pseudo4MouseClicked
+        selection = 4;
+        paintingNew();
+    }//GEN-LAST:event_Pseudo4MouseClicked
+
+    private void Low5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Low5MouseClicked
+        selection = 5;
+        paintingNew();
+    }//GEN-LAST:event_Low5MouseClicked
+
+    private void Box6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Box6MouseClicked
+        selection = 6;
+        paintingNew();
+    }//GEN-LAST:event_Box6MouseClicked
+
+    private void High7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_High7MouseClicked
+        selection = 7;
+        paintingNew();
+    }//GEN-LAST:event_High7MouseClicked
+
+    private void Horse8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Horse8MouseClicked
+        selection = 8;
+        paintingNew();
+    }//GEN-LAST:event_Horse8MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField A1;
@@ -461,6 +487,7 @@ public class Orange1 extends javax.swing.JPanel {
     private javax.swing.JTextField A3;
     private javax.swing.JTextField B1;
     private javax.swing.JTextField B2;
+    private javax.swing.JButton Box6;
     private javax.swing.JTextField C1;
     private javax.swing.JTextField C2;
     private javax.swing.JTextField D1;
@@ -475,6 +502,8 @@ public class Orange1 extends javax.swing.JPanel {
     private javax.swing.JTextField H1;
     private javax.swing.JTextField H2;
     private javax.swing.JTextField H3;
+    private javax.swing.JButton High7;
+    private javax.swing.JButton Horse8;
     private javax.swing.JTextField I1;
     private javax.swing.JTextField I2;
     private javax.swing.JTextField I3;
@@ -482,12 +511,14 @@ public class Orange1 extends javax.swing.JPanel {
     private javax.swing.JTextField I5;
     private javax.swing.JTextField I6;
     private javax.swing.JTextField I7;
-    private javax.swing.JButton Kia4;
-    private javax.swing.JButton Left2;
+    private javax.swing.JButton Kia3;
+    private javax.swing.JButton Left1;
+    private javax.swing.JButton Low5;
     private javax.swing.JButton MainMenuButton;
-    private javax.swing.JButton Reverse1;
-    private javax.swing.JButton Right3;
+    private javax.swing.JButton Pseudo4;
+    private javax.swing.JButton Right2;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
