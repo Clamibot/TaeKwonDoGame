@@ -57,7 +57,7 @@ public class Brown2 extends javax.swing.JPanel {
             if (index == answer.length)
             {
                 // Display a congratulatory text box here and ask the player if they want to return to the main menu or exit
-                JOptionPane.showMessageDialog(null, "Congratulations! You Completed The Kata!");
+                JOptionPane.showMessageDialog(null, "Congratulations, You Completed The Kata! Now Go Put These Steps Into Practce!");
                 
                 int choice = JOptionPane.showOptionDialog(null,
                         "Do You Want To Return To The Main Menu Or Exit The Game?",

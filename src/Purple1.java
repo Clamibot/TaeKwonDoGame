@@ -9,8 +9,6 @@ import javax.swing.JTextField;
  * @author MasterWard
  */
 public class Purple1 extends javax.swing.JPanel {
-
-    // private String ans[] = {"Reverse", "Left", "Kia", "Reverse", "Right", "Reverse", "Left", "Reverse", "Reverse", "Reverse", "Reverse"}; // FOr debugging can delete later
     private int answer[] = {2, 4, 1, 3, 1, 2, 1, 3, 1, 4, 2, 1, 2, 3, 4, 3, 1, 2, 1, 2, 1, 2, 1}; // Answers in int form
     private int selection = 0; // Variable that holds the player's response to a highlighted section of the text
     private int index = 0; // Index of answers on
@@ -18,7 +16,6 @@ public class Purple1 extends javax.swing.JPanel {
     private JTextField textFields[];
     public JFrame messages = new JFrame("JOptionPane showMessageDialog example");
     public Object messageoptions[] = {"Exit To Main Menu", "Quit Game"};
-// This also means that 0 is nothing, 1 is reverse, 2 is left, 3 is right and 4 Kia in the selection array.
 
     /**
      * White belt Interactive Form
@@ -57,7 +54,7 @@ public class Purple1 extends javax.swing.JPanel {
             if (index == answer.length)
             {
                 // Display a congratulatory text box here and ask the player if they want to return to the main menu or exit
-                JOptionPane.showMessageDialog(null, "Congratulations! You Completed The Kata!");
+                JOptionPane.showMessageDialog(null, "Congratulations, You Completed The Kata! Now Go Put These Steps Into Practce!");
                 
                 int choice = JOptionPane.showOptionDialog(null,
                         "Do You Want To Return To The Main Menu Or Exit The Game?",
@@ -201,7 +198,9 @@ public class Purple1 extends javax.swing.JPanel {
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(523, 13, -1, -1));
 
         A1.setEditable(false);
+        A1.setBackground(new java.awt.Color(204, 204, 204));
         A1.setText("Answer1");
+        A1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
         A1.setMaximumSize(new java.awt.Dimension(100, 100));
         A1.setMinimumSize(new java.awt.Dimension(10, 22));
         A1.addActionListener(new java.awt.event.ActionListener() {
@@ -209,14 +208,16 @@ public class Purple1 extends javax.swing.JPanel {
                 A1ActionPerformed(evt);
             }
         });
-        add(A1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 124, 56, 22));
+        add(A1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 56, 22));
 
-        A2.setBackground(new java.awt.Color(240, 240, 240));
+        A2.setBackground(new java.awt.Color(204, 204, 204));
         A2.setText("Answer2");
+        A2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
         add(A2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 124, 60, -1));
 
-        A3.setBackground(new java.awt.Color(240, 240, 240));
+        A3.setBackground(new java.awt.Color(204, 204, 204));
         A3.setText("Answer3");
+        A3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
         A3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 A3ActionPerformed(evt);
@@ -224,84 +225,105 @@ public class Purple1 extends javax.swing.JPanel {
         });
         add(A3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 124, 56, 18));
 
-        B2.setBackground(new java.awt.Color(240, 240, 240));
+        B2.setBackground(new java.awt.Color(204, 204, 204));
         B2.setText("Answer5");
+        B2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
         add(B2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 124, 56, 18));
 
-        C1.setBackground(new java.awt.Color(240, 240, 240));
+        C1.setBackground(new java.awt.Color(204, 204, 204));
         C1.setText("Answer6");
+        C1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
         add(C1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 124, 60, 18));
 
-        C2.setBackground(new java.awt.Color(240, 240, 240));
+        C2.setBackground(new java.awt.Color(204, 204, 204));
         C2.setText("Answer7");
+        C2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
         add(C2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 124, 56, -1));
 
-        D1.setBackground(new java.awt.Color(240, 240, 240));
+        D1.setBackground(new java.awt.Color(204, 204, 204));
         D1.setText("Answer8");
+        D1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
         add(D1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 124, 56, -1));
 
-        B1.setBackground(new java.awt.Color(240, 240, 240));
+        B1.setBackground(new java.awt.Color(204, 204, 204));
         B1.setText("Answer4");
+        B1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
         add(B1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 124, 56, -1));
 
-        D2.setBackground(new java.awt.Color(240, 240, 240));
+        D2.setBackground(new java.awt.Color(204, 204, 204));
         D2.setText("Answer9");
+        D2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
         add(D2, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 124, 56, -1));
 
-        E1.setBackground(new java.awt.Color(240, 240, 240));
+        E1.setBackground(new java.awt.Color(204, 204, 204));
         E1.setText("Answer10");
+        E1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
         add(E1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 124, 70, -1));
 
-        F1.setBackground(new java.awt.Color(240, 240, 240));
+        F1.setBackground(new java.awt.Color(204, 204, 204));
         F1.setText("Answer11");
+        F1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
         add(F1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 124, 63, -1));
 
-        F2.setBackground(new java.awt.Color(240, 240, 240));
+        F2.setBackground(new java.awt.Color(204, 204, 204));
         F2.setText("Answer12");
+        F2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
         add(F2, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 124, 63, -1));
 
-        F3.setBackground(new java.awt.Color(240, 240, 240));
+        F3.setBackground(new java.awt.Color(204, 204, 204));
         F3.setText("Answer13");
+        F3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
         add(F3, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 124, 63, -1));
 
-        G1.setBackground(new java.awt.Color(240, 240, 240));
+        G1.setBackground(new java.awt.Color(204, 204, 204));
         G1.setText("Answer14");
+        G1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
         add(G1, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 124, 63, -1));
 
-        G2.setBackground(new java.awt.Color(240, 240, 240));
+        G2.setBackground(new java.awt.Color(204, 204, 204));
         G2.setText("Answer15");
+        G2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
         add(G2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 124, 63, -1));
 
-        G3.setBackground(new java.awt.Color(240, 240, 240));
+        G3.setBackground(new java.awt.Color(204, 204, 204));
         G3.setText("Answer16");
+        G3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
         add(G3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 124, 63, -1));
 
         H1.setEditable(false);
+        H1.setBackground(new java.awt.Color(204, 204, 204));
         H1.setText("Answer17");
+        H1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
         add(H1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 96, 63, -1));
 
-        H2.setBackground(new java.awt.Color(240, 240, 240));
+        H2.setBackground(new java.awt.Color(204, 204, 204));
         H2.setText("Answer18");
+        H2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
         add(H2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 68, 63, -1));
 
-        H3.setBackground(new java.awt.Color(240, 240, 240));
+        H3.setBackground(new java.awt.Color(204, 204, 204));
         H3.setText("Answer19");
+        H3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
         add(H3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 40, 63, -1));
 
-        I1.setBackground(new java.awt.Color(240, 240, 240));
+        I1.setBackground(new java.awt.Color(204, 204, 204));
         I1.setText("Answer20");
+        I1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
         add(I1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 40, 63, -1));
 
-        I2.setBackground(new java.awt.Color(240, 240, 240));
+        I2.setBackground(new java.awt.Color(204, 204, 204));
         I2.setText("Answer21");
+        I2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
         add(I2, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 40, 63, -1));
 
-        I3.setBackground(new java.awt.Color(240, 240, 240));
+        I3.setBackground(new java.awt.Color(204, 204, 204));
         I3.setText("Answer22");
+        I3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
         add(I3, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 40, 63, -1));
 
-        I4.setBackground(new java.awt.Color(240, 240, 240));
+        I4.setBackground(new java.awt.Color(204, 204, 204));
         I4.setText("Answer23");
+        I4.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
         add(I4, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 40, 63, -1));
 
         jTextArea1.setBackground(new java.awt.Color(204, 204, 204));

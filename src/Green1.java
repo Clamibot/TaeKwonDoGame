@@ -9,8 +9,6 @@ import javax.swing.JTextField;
  * @author MasterWard
  */
 public class Green1 extends javax.swing.JPanel {
-
-    // private String ans[] = {"Reverse", "Left", "Kia", "Reverse", "Right", "Reverse", "Left", "Reverse", "Reverse", "Reverse", "Reverse"}; // FOr debugging can delete later
     private int answer[] = {2, 4, 1, 3, 1, 2, 1, 3, 1, 4, 2, 1, 2, 3, 4, 3, 1, 2, 1, 2, 1, 2, 1}; // Answers in int form
     private int selection = 0; // Variable that holds the player's response to a highlighted section of the text
     private int index = 0; // Index of answers on
@@ -18,7 +16,6 @@ public class Green1 extends javax.swing.JPanel {
     private JTextField textFields[];
     public JFrame messages = new JFrame("JOptionPane showMessageDialog example");
     public Object messageoptions[] = {"Exit To Main Menu", "Quit Game"};
-// This also means that 0 is nothing, 1 is reverse, 2 is left, 3 is right and 4 Kia in the selection array.
 
     /**
      * White belt Interactive Form
@@ -57,7 +54,7 @@ public class Green1 extends javax.swing.JPanel {
             if (index == answer.length)
             {
                 // Display a congratulatory text box here and ask the player if they want to return to the main menu or exit
-                JOptionPane.showMessageDialog(null, "Congratulations! You Completed The Kata!");
+                JOptionPane.showMessageDialog(null, "Congratulations, You Completed The Kata! Now Go Put These Steps Into Practce!");
                 
                 int choice = JOptionPane.showOptionDialog(null,
                         "Do You Want To Return To The Main Menu Or Exit The Game?",
