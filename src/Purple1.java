@@ -9,20 +9,20 @@ import javax.swing.JTextField;
  * @author MasterWard
  */
 public class Purple1 extends javax.swing.JPanel {
-    private int answer[] = {2, 4, 1, 3, 1, 2, 1, 3, 1, 4, 2, 1, 2, 3, 4, 3, 1, 2, 1, 2, 1, 2, 1}; // Answers in int form
+    private int answer[] = {1, 7, 3, 7, 2, 8, 1, 2, 1, 3, 7, 1, 7, 2, 1, 4, 2, 4, 5, 6, 6, 3}; // Answers in int form
     private int selection = 0; // Variable that holds the player's response to a highlighted section of the text
     private int index = 0; // Index of answers on
-    private String options[] = {" ", "Reverse", "Left", "Right", "Kia", "", "", ""}; // The options to choose
+    private String options[] = {" ", "Left", "Right", "Kia", "Cross", "Low", "High", "To-San", "Pseudo"}; // The options to choose
     private JTextField textFields[];
     public JFrame messages = new JFrame("JOptionPane showMessageDialog example");
-    public Object messageoptions[] = {"Exit To Main Menu", "Quit Game"};
+    public Object messageoptions[] = {"Exit To Main Menu", "Quit Game", "Next Kata"};
 
     /**
      * White belt Interactive Form
      */
     public Purple1() {
         initComponents();
-        textFields = new JTextField[]{A1, A2, A3, B1, B2, C1, C2, D1, D2, E1, F1, F2, F3, G1, G2, G3, H1, H2, H3, I1, I2, I3, I4};
+        textFields = new JTextField[]{A1, A2, A3, B1, B2, C1, C2, D1, D2, E1, F1, F2, F3, G1, G2, G3, H1, H2, H3, I1, I2, I3};
         initialPaint();
     }
     
@@ -57,26 +57,34 @@ public class Purple1 extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "Congratulations, You Completed The Kata! Now Go Put These Steps Into Practce!");
                 
                 int choice = JOptionPane.showOptionDialog(null,
-                        "Do You Want To Return To The Main Menu Or Exit The Game?",
-                        "Next Steps", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, messageoptions, null);
-                if (choice == 0)
+                        "Do You Want To Return To The Main Menu, Exit The Game, Or Move Onto The Next Kata?",
+                        "Next Steps", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, messageoptions, null);
+                switch (choice)
                 {
-                    Main.display.DisplayMainMenu(false, true, false);
-                }
-                else
-                {
-                    // Kill all threads and exit
-                    try
-                    {
-                        Main.display.kill();
-                        JOptionPane.showMessageDialog(null, "Thanks For Playing!");
-                        System.exit(0);
-                    }
-                    catch (Exception closeException)
-                    {
-                        JOptionPane.showMessageDialog(null, "Something Went Wrong When Attempting To Kill Program Threads. Force Closing Program.");
-                        System.exit(0);
-                    }
+                    case 0:
+                        Main.display.DisplayMainMenu(false, true, false);
+                        break;
+                    case 1:
+                        // Kill all threads and exit
+                        try
+                        {
+                            Main.display.kill();
+                            JOptionPane.showMessageDialog(null, "Thanks For Playing!");
+                            System.exit(0);
+                        }
+                        catch (Exception closeException)
+                        {
+                            JOptionPane.showMessageDialog(null, "Something Went Wrong When Attempting To Kill Program Threads. Force Closing Program.");
+                            System.exit(0);
+                        }
+                    case 2:
+                        Main.display.kataContentPane.removeAll();
+                        Main.display.kataContentPane.add(new Green1());
+                        Main.display.kataContentPane.repaint();
+                        Main.display.displaywindow.pack();
+                        break;
+                    default:
+                        break;
                 }
             }
             else
@@ -98,12 +106,17 @@ public class Purple1 extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Reverse1 = new javax.swing.JButton();
-        Left2 = new javax.swing.JButton();
-        Right3 = new javax.swing.JButton();
-        Kia4 = new javax.swing.JButton();
+        Left1 = new javax.swing.JButton();
+        Right2 = new javax.swing.JButton();
+        Kia3 = new javax.swing.JButton();
+        Cross4 = new javax.swing.JButton();
+        Low5 = new javax.swing.JButton();
+        High6 = new javax.swing.JButton();
+        To_San7 = new javax.swing.JButton();
+        Pseudo8 = new javax.swing.JButton();
         MainMenuButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         A1 = new javax.swing.JTextField();
         A2 = new javax.swing.JTextField();
         A3 = new javax.swing.JTextField();
@@ -126,7 +139,6 @@ public class Purple1 extends javax.swing.JPanel {
         I1 = new javax.swing.JTextField();
         I2 = new javax.swing.JTextField();
         I3 = new javax.swing.JTextField();
-        I4 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
 
@@ -137,53 +149,69 @@ public class Purple1 extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1610, 910));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Reverse1.setBackground(new java.awt.Color(0, 240, 240));
-        Reverse1.setText("Reverse");
-        Reverse1.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                Reverse1ItemStateChanged(evt);
-            }
-        });
-        Reverse1.addMouseListener(new java.awt.event.MouseAdapter() {
+        Left1.setText("Left");
+        Left1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Reverse1MouseClicked(evt);
+                Left1MouseClicked(evt);
             }
         });
-        Reverse1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Reverse1ActionPerformed(evt);
-            }
-        });
-        add(Reverse1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 68, 190, 45));
+        add(Left1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 140, 60));
 
-        Left2.setText("Left");
-        Left2.addMouseListener(new java.awt.event.MouseAdapter() {
+        Right2.setText("Right");
+        Right2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Left2MouseClicked(evt);
+                Right2MouseClicked(evt);
             }
         });
-        Left2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Left2ActionPerformed(evt);
-            }
-        });
-        add(Left2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 68, 194, 45));
+        add(Right2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 140, 60));
 
-        Right3.setText("Right");
-        Right3.addMouseListener(new java.awt.event.MouseAdapter() {
+        Kia3.setText("Kia");
+        Kia3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Right3MouseClicked(evt);
+                Kia3MouseClicked(evt);
             }
         });
-        add(Right3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 68, 202, 45));
+        add(Kia3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 70, 140, 60));
 
-        Kia4.setText("Kia");
-        Kia4.addMouseListener(new java.awt.event.MouseAdapter() {
+        Cross4.setText("Cross");
+        Cross4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Kia4MouseClicked(evt);
+                Cross4MouseClicked(evt);
             }
         });
-        add(Kia4, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 68, 145, 45));
+        add(Cross4, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 70, 140, 60));
+
+        Low5.setText("Low");
+        Low5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Low5MouseClicked(evt);
+            }
+        });
+        add(Low5, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 70, 140, 60));
+
+        High6.setText("High");
+        High6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                High6MouseClicked(evt);
+            }
+        });
+        add(High6, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 70, 140, 60));
+
+        To_San7.setText("To-San");
+        To_San7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                To_San7MouseClicked(evt);
+            }
+        });
+        add(To_San7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 70, 140, 60));
+
+        Pseudo8.setText("Pseudo");
+        Pseudo8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Pseudo8MouseClicked(evt);
+            }
+        });
+        add(Pseudo8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 70, 140, 60));
 
         MainMenuButton.setText("Back To Main Menu");
         MainMenuButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -195,7 +223,11 @@ public class Purple1 extends javax.swing.JPanel {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Word Bank");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(523, 13, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, 90, 40));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel3.setText("Steps For Kata To-San:");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(687, 160, 280, 40));
 
         A1.setEditable(false);
         A1.setBackground(new java.awt.Color(204, 204, 204));
@@ -208,12 +240,12 @@ public class Purple1 extends javax.swing.JPanel {
                 A1ActionPerformed(evt);
             }
         });
-        add(A1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 56, 22));
+        add(A1, new org.netbeans.lib.awtextra.AbsoluteConstraints(167, 205, 70, -1));
 
         A2.setBackground(new java.awt.Color(204, 204, 204));
         A2.setText("Answer2");
         A2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
-        add(A2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 124, 60, -1));
+        add(A2, new org.netbeans.lib.awtextra.AbsoluteConstraints(554, 205, 70, -1));
 
         A3.setBackground(new java.awt.Color(204, 204, 204));
         A3.setText("Answer3");
@@ -223,154 +255,113 @@ public class Purple1 extends javax.swing.JPanel {
                 A3ActionPerformed(evt);
             }
         });
-        add(A3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 124, 56, 18));
+        add(A3, new org.netbeans.lib.awtextra.AbsoluteConstraints(745, 205, 70, -1));
 
         B2.setBackground(new java.awt.Color(204, 204, 204));
         B2.setText("Answer5");
         B2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
-        add(B2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 124, 56, 18));
+        add(B2, new org.netbeans.lib.awtextra.AbsoluteConstraints(692, 249, 70, -1));
 
         C1.setBackground(new java.awt.Color(204, 204, 204));
         C1.setText("Answer6");
         C1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
-        add(C1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 124, 60, 18));
+        add(C1, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 293, 70, -1));
 
         C2.setBackground(new java.awt.Color(204, 204, 204));
         C2.setText("Answer7");
         C2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
-        add(C2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 124, 56, -1));
+        add(C2, new org.netbeans.lib.awtextra.AbsoluteConstraints(424, 293, 70, -1));
 
         D1.setBackground(new java.awt.Color(204, 204, 204));
         D1.setText("Answer8");
         D1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
-        add(D1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 124, 56, -1));
+        add(D1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 315, 70, -1));
 
         B1.setBackground(new java.awt.Color(204, 204, 204));
         B1.setText("Answer4");
         B1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
-        add(B1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 124, 56, -1));
+        add(B1, new org.netbeans.lib.awtextra.AbsoluteConstraints(537, 249, 70, -1));
 
         D2.setBackground(new java.awt.Color(204, 204, 204));
         D2.setText("Answer9");
         D2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
-        add(D2, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 124, 56, -1));
+        add(D2, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 337, 70, -1));
 
         E1.setBackground(new java.awt.Color(204, 204, 204));
         E1.setText("Answer10");
         E1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
-        add(E1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 124, 70, -1));
+        add(E1, new org.netbeans.lib.awtextra.AbsoluteConstraints(733, 360, 70, -1));
 
         F1.setBackground(new java.awt.Color(204, 204, 204));
         F1.setText("Answer11");
         F1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
-        add(F1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 124, 63, -1));
+        add(F1, new org.netbeans.lib.awtextra.AbsoluteConstraints(402, 381, 70, -1));
 
         F2.setBackground(new java.awt.Color(204, 204, 204));
         F2.setText("Answer12");
         F2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
-        add(F2, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 124, 63, -1));
+        add(F2, new org.netbeans.lib.awtextra.AbsoluteConstraints(555, 381, 70, -1));
 
         F3.setBackground(new java.awt.Color(204, 204, 204));
         F3.setText("Answer13");
         F3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
-        add(F3, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 124, 63, -1));
+        add(F3, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 425, 70, -1));
 
         G1.setBackground(new java.awt.Color(204, 204, 204));
         G1.setText("Answer14");
         G1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
-        add(G1, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 124, 63, -1));
+        add(G1, new org.netbeans.lib.awtextra.AbsoluteConstraints(702, 425, 70, -1));
 
         G2.setBackground(new java.awt.Color(204, 204, 204));
         G2.setText("Answer15");
         G2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
-        add(G2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 124, 63, -1));
+        add(G2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 469, 70, -1));
 
         G3.setBackground(new java.awt.Color(204, 204, 204));
         G3.setText("Answer16");
         G3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
-        add(G3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 124, 63, -1));
+        add(G3, new org.netbeans.lib.awtextra.AbsoluteConstraints(972, 469, 70, -1));
 
         H1.setEditable(false);
         H1.setBackground(new java.awt.Color(204, 204, 204));
         H1.setText("Answer17");
         H1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
-        add(H1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 96, 63, -1));
+        add(H1, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 535, 70, -1));
 
         H2.setBackground(new java.awt.Color(204, 204, 204));
         H2.setText("Answer18");
         H2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
-        add(H2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 68, 63, -1));
+        add(H2, new org.netbeans.lib.awtextra.AbsoluteConstraints(977, 535, 70, -1));
 
         H3.setBackground(new java.awt.Color(204, 204, 204));
         H3.setText("Answer19");
         H3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
-        add(H3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 40, 63, -1));
+        add(H3, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 601, 70, -1));
 
         I1.setBackground(new java.awt.Color(204, 204, 204));
         I1.setText("Answer20");
         I1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
-        add(I1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 40, 63, -1));
+        add(I1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 601, 70, -1));
 
         I2.setBackground(new java.awt.Color(204, 204, 204));
         I2.setText("Answer21");
         I2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
-        add(I2, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 40, 63, -1));
+        add(I2, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 623, 70, -1));
 
         I3.setBackground(new java.awt.Color(204, 204, 204));
         I3.setText("Answer22");
         I3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
-        add(I3, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 40, 63, -1));
-
-        I4.setBackground(new java.awt.Color(204, 204, 204));
-        I4.setText("Answer23");
-        I4.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
-        add(I4, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 40, 63, -1));
+        add(I3, new org.netbeans.lib.awtextra.AbsoluteConstraints(757, 668, 70, -1));
 
         jTextArea1.setBackground(new java.awt.Color(204, 204, 204));
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setText("1. Step Into A ____ Side Forebalance Facing Your Left, Do A ______ Block, And Say ___.\n2. Punch In Place.\n3. Rotate To The Other Side By Taking Steps Over And Do A ______ Block In A _____ Side Forebalance.\n4. Punch In Place.\n5. Do A ______ Block Towards The Front In A ____ Side Fighting Stance.\n6. Step Forward And Spear In A _____ Side Forebalance.\n7. Spin Around 36Degrees And End Up In A ____ Side Forebalance.\n8. Backfist With The Left Hand, Step Forward, Backfist With The Right Hand, And Say ___.\n9. Spin 270 Degrees To Your Left And Do A ______ Block In A ____ Side Forebalance.\n10. Punch In Place.\n11. Rotate To The Other Side By Taking Steps Over And Do A ______ Block In A _____ Side Forebalance.\n12. Punch In Place.\n13. Step Into A ____ Side Forebalance At A 4Degree Angle Offset To The Left Relative To The Back And Do A _____ Block.\n14. Bring The Right Hand Back, Do A Rear Leg Front Kick, And Set It Down In Front Of You.\n15. Punch Twice In the Air.\n16. Step Into A ____ Side Forebalance At A 4Degree Angle Offset To The Right Relative To The Back And Do A _____ Block.\n17. Bring The Left Hand Back, Do A Rear Leg Front Kick, And Set It Down In Front Of You.\n18. Punch Twice In the Air. \n19. Do A ___ Block To The Back, Then Do A ____ Block With The Same Arm.\n20. Step Forward And Do A ____ Block.\n21. Fold For A Chop, Spin 180 Degrees Towards Your Left, And Chop.\n22. Fold For Another Chop, Slide Your Feet Together, Slide To The Right, Chop, And Say ___.\n");
+        jTextArea1.setText("1. Step Into A            Side Forebalance Facing Your Left, Do A            Block, And Say            .\n2. Punch In Place.\n3. Rotate To The Other Side By Taking Steps Over And Do A            Block In A            Side Forebalance.\n4. Punch In Place.\n5. Do A            Block Towards The Front In A            Side Fighting Stance.\n6. Step Forward And Spear In A             Side Forebalance.\n7. Spin Around 360 Degrees And End Up In A            Side Forebalance.\n8. Backfist With The Left Hand, Step Forward, Backfist With The Right Hand, And Say            .\n9. Spin 270 Degrees To Your Left And Do A            Block In A            Side Forebalance.\n10. Punch In Place.\n11. Rotate To The Other Side By Taking Steps Over And Do A            Block In A            Side Forebalance.\n12. Punch In Place.\n13. Step Into A             Side Forebalance At A 45 Degree Angle Offset To The Left Relative To The Back And Do A            Block.\n14. Bring The Right Hand Back, Do A Rear Leg Front Kick, And Set It Down In Front Of You.\n15. Punch Twice In the Air.\n16. Step Into A            Side Forebalance At A 45 Degree Angle Offset To The Right Relative To The Back And Do A            Block.\n17. Bring The Left Hand Back, Do A Rear Leg Front Kick, And Set It Down In Front Of You.\n18. Punch Twice In the Air. \n19. Do A            Block To The Back, Then Do A            Block With The Same Arm.\n20. Step Forward And Do A            Block.\n21. Fold For A Chop, Spin 180 Degrees Towards Your Left, And Chop.\n22. Fold For Another Chop, Slide Your Feet Together, Slide To The Right, Chop, And Say            .\n");
         jScrollPane1.setViewportView(jTextArea1);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 1510, 650));
     }// </editor-fold>//GEN-END:initComponents
-
-    private void Reverse1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Reverse1ActionPerformed
-
-    }//GEN-LAST:event_Reverse1ActionPerformed
-
-    private void Left2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Left2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Left2ActionPerformed
-
-    private void Reverse1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Reverse1ItemStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Reverse1ItemStateChanged
-
-    private void Reverse1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Reverse1MouseClicked
-        //  System.out.println("Clicked reverse when the answer is " + ans[index]);
-        selection = 1;
-        paintingNew();
-    }//GEN-LAST:event_Reverse1MouseClicked
-
-    private void Left2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Left2MouseClicked
-        //  System.out.println("Clicked Left when the answer is " + ans[index]);
-        selection = 2;
-        paintingNew();
-    }//GEN-LAST:event_Left2MouseClicked
-
-    private void Right3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Right3MouseClicked
-        //    System.out.println("Clicked Right when the answer is " + ans[index]);
-        selection = 3;
-        paintingNew();
-    }//GEN-LAST:event_Right3MouseClicked
-
-    private void Kia4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Kia4MouseClicked
-        //  System.out.println("Clicked Kia when the answer is " + ans[index]);
-        selection = 4;
-        paintingNew();
-    }//GEN-LAST:event_Kia4MouseClicked
 
     private void A1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A1ActionPerformed
         // TODO add your handling code here:
@@ -390,6 +381,46 @@ public class Purple1 extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_MainMenuButtonMouseClicked
 
+    private void Left1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Left1MouseClicked
+        selection = 1;
+        paintingNew();
+    }//GEN-LAST:event_Left1MouseClicked
+
+    private void Right2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Right2MouseClicked
+        selection = 2;
+        paintingNew();
+    }//GEN-LAST:event_Right2MouseClicked
+
+    private void Kia3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Kia3MouseClicked
+        selection = 3;
+        paintingNew();
+    }//GEN-LAST:event_Kia3MouseClicked
+
+    private void Cross4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cross4MouseClicked
+        selection = 4;
+        paintingNew();
+    }//GEN-LAST:event_Cross4MouseClicked
+
+    private void Low5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Low5MouseClicked
+        selection = 5;
+        paintingNew();
+    }//GEN-LAST:event_Low5MouseClicked
+
+    private void High6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_High6MouseClicked
+        selection = 6;
+        paintingNew();
+    }//GEN-LAST:event_High6MouseClicked
+
+    private void To_San7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_To_San7MouseClicked
+        selection = 7;
+        paintingNew();
+    }//GEN-LAST:event_To_San7MouseClicked
+
+    private void Pseudo8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pseudo8MouseClicked
+        selection = 8;
+        paintingNew();
+    }//GEN-LAST:event_Pseudo8MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField A1;
@@ -399,6 +430,7 @@ public class Purple1 extends javax.swing.JPanel {
     private javax.swing.JTextField B2;
     private javax.swing.JTextField C1;
     private javax.swing.JTextField C2;
+    private javax.swing.JButton Cross4;
     private javax.swing.JTextField D1;
     private javax.swing.JTextField D2;
     private javax.swing.JTextField E1;
@@ -411,16 +443,19 @@ public class Purple1 extends javax.swing.JPanel {
     private javax.swing.JTextField H1;
     private javax.swing.JTextField H2;
     private javax.swing.JTextField H3;
+    private javax.swing.JButton High6;
     private javax.swing.JTextField I1;
     private javax.swing.JTextField I2;
     private javax.swing.JTextField I3;
-    private javax.swing.JTextField I4;
-    private javax.swing.JButton Kia4;
-    private javax.swing.JButton Left2;
+    private javax.swing.JButton Kia3;
+    private javax.swing.JButton Left1;
+    private javax.swing.JButton Low5;
     private javax.swing.JButton MainMenuButton;
-    private javax.swing.JButton Reverse1;
-    private javax.swing.JButton Right3;
+    private javax.swing.JButton Pseudo8;
+    private javax.swing.JButton Right2;
+    private javax.swing.JButton To_San7;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables

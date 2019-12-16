@@ -17,7 +17,7 @@ public class Blue2 extends javax.swing.JPanel {
     private String options[] = {" ", "Reverse", "Left", "Right", "Kia", "", "", ""}; // The options to choose
     private JTextField textFields[];
     public JFrame messages = new JFrame("JOptionPane showMessageDialog example");
-    public Object messageoptions[] = {"Exit To Main Menu", "Quit Game"};
+    public Object messageoptions[] = {"Exit To Main Menu", "Quit Game", "Next Kata"};
 // This also means that 0 is nothing, 1 is reverse, 2 is left, 3 is right and 4 Kia in the selection array.
 
     /**
@@ -60,26 +60,34 @@ public class Blue2 extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "Congratulations, You Completed The Kata! Now Go Put These Steps Into Practce!");
                 
                 int choice = JOptionPane.showOptionDialog(null,
-                        "Do You Want To Return To The Main Menu Or Exit The Game?",
-                        "Next Steps", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, messageoptions, null);
-                if (choice == 0)
+                        "Do You Want To Return To The Main Menu, Exit The Game, Or Move Onto The Next Kata?",
+                        "Next Steps", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, messageoptions, null);
+                switch (choice)
                 {
-                    Main.display.DisplayMainMenu(false, true, true);
-                }
-                else
-                {
-                    // Kill all threads and exit
-                    try
-                    {
-                        Main.display.kill();
-                        JOptionPane.showMessageDialog(null, "Thanks For Playing!");
-                        System.exit(0);
-                    }
-                    catch (Exception closeException)
-                    {
-                        JOptionPane.showMessageDialog(null, "Something Went Wrong When Attempting To Kill Program Threads. Force Closing Program.");
-                        System.exit(0);
-                    }
+                    case 0:
+                        Main.display.DisplayMainMenu(false, true, false);
+                        break;
+                    case 1:
+                        // Kill all threads and exit
+                        try
+                        {
+                            Main.display.kill();
+                            JOptionPane.showMessageDialog(null, "Thanks For Playing!");
+                            System.exit(0);
+                        }
+                        catch (Exception closeException)
+                        {
+                            JOptionPane.showMessageDialog(null, "Something Went Wrong When Attempting To Kill Program Threads. Force Closing Program.");
+                            System.exit(0);
+                        }
+                    case 2:
+                        Main.display.kataContentPane.removeAll();
+                        Main.display.kataContentPane.add(new Red1());
+                        Main.display.kataContentPane.repaint();
+                        Main.display.displaywindow.pack();
+                        break;
+                    default:
+                        break;
                 }
             }
             else
