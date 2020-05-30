@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\MainMenuButtons.cs" />
     <Compile Include="Assets\Scripts\PopupMenuButtons.cs" />
     <Compile Include="Assets\Scripts\PopupText.cs" />
+    <Compile Include="Assets\Scripts\ProgressLoader.cs" />
     <None Include="Assets\Clean Title Transitions\Read Me.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/x45clamibot/Documents/Unity/Tae Kwon Do Game/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

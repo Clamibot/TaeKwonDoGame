@@ -25,7 +25,8 @@ public enum ButtonType
 	BROWNBELT0,
 	BROWNBELT1,
 	BROWNBELT2,
-	BLACKBELT
+	BLACKBELT0,
+	BLACKBELT1
 }
 
 public class MainMenuButtons : MonoBehaviour
@@ -84,8 +85,11 @@ public class MainMenuButtons : MonoBehaviour
 			case ButtonType.BROWNBELT2:
 				theButton.onClick.AddListener(LoadKata12);
 				break;
-			case ButtonType.BLACKBELT:
+			case ButtonType.BLACKBELT0:
 				theButton.onClick.AddListener(LoadKata13);
+				break;
+			case ButtonType.BLACKBELT1:
+				theButton.onClick.AddListener(LoadKata14);
 				break;
 		}
 	}
@@ -153,6 +157,10 @@ public class MainMenuButtons : MonoBehaviour
 	public void LoadKata13() // Load the scene for the black belt kata
 	{
 		SceneManager.LoadScene(13);
+	}
+	public void LoadKata14() // Load the scene for the black belt kata
+	{
+		SceneManager.LoadScene(14);
 	}
 
 	public void Quit()

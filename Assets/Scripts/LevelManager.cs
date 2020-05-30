@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
@@ -22,6 +23,7 @@ public class LevelManager : MonoBehaviour
     private int[] transitions; // The blanks at which we should hide the previous step and display the next
     private string[] options; // The valid response options for this level
     private float[] videoSegmentLengths; // The video segment lengths corresponding to the steps the player is supposed to solve
+    private string path;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,7 @@ public class LevelManager : MonoBehaviour
         currentBlank = 0;
         step = 0;
         videoPanel.Release(); // Reset the render texture that serves as the video panel
+        path = Application.persistentDataPath + "/save.txt";
         // Assign the right set of correct answers in integer form
         switch (levelNumber)
         {
@@ -49,6 +52,18 @@ public class LevelManager : MonoBehaviour
                 transitions = new int[] { 4, 5, 8, 9, 11, 13, 15, 18, 20, 22, 24, 26, 28, 29, 31, 33, 35, 37, 39, 41, 44 };
                 options = new string[] { "Left", "Right", "Kia", "Sudo", "Low", "High", "Box", "Punch", "Forward", "Horse" };
                 videoSegmentLengths = new float[] { 4.9f, 1.1f, 1.2f, 1.1f, 1.2f, 1.2f, 1.2f, 1.6f, 1.6f, 1.2f, 1.5f, 1.2f, 1.3f, 0.8f, 1.3f, 1.3f, 1.2f, 1.7f, 1.2f, 1.5f, 2.2f};
+                break;
+            case 4:
+                correctAnswers = new int[] { 0, 0, 4, 2, 8, 1, 4, 1, 8, 3, 0, 9, 1, 0, 0, 0, 1, 2, 0, 4, 0, 8, 1, 4, 1, 8, 0, 0, 7, 1, 8, 1, 1, 7, 0, 8, 5, 0, 6, 6, 0, 1, 2 };
+                transitions = new int[] { 4, 5, 8, 9, 11, 13, 15, 16, 17, 18, 21, 22, 25, 26, 29, 30, 31, 34, 35, 36, 38, 39, 40, 41, 43 };
+                options = new string[] { "Left", "Right", "Kia", "Sudo", "To-San", "Low", "High", "Cross", "Punch", "Spear" };
+                videoSegmentLengths = new float[] { 3f, 0.4f, 1.8f, 0.4f, 1.2f, 1.2f, 1.8f, 0.5f, 0.8f, 0.4f, 1.8f, 0.4f, 1.8f, 0.4f, 2f, 2.25f, 0.95f, 1.6f, 2.1f, 0.95f, 1.4f, 0.8f, 1.2f, 2f, 2.4f };
+                break;
+            case 5:
+                correctAnswers = new int[] { 3, 0, 6, 2, 9, 7, 1, 6, 9, 7, 0, 4, 1, 4, 0, 4, 1, 8, 2, 6, 0, 6, 9, 7, 1, 6, 9, 7, 0, 5, 1, 0, 5, 0, 1, 0, 0, 1, 2, 3 };
+                transitions = new int[] { 1, 4, 5, 6, 8, 9, 10, 12, 14, 16, 18, 19, 22, 23, 24, 26, 27, 28, 30, 31, 33, 34, 35, 37, 38, 39, 40 };
+                options = new string[] { "Left", "Right", "Kia", "Position", "Sudo", "Scoop", "Box", "Punch", "Spear", "Chop" };
+                videoSegmentLengths = new float[] { 7f, 2.6f, 0.4f, 0.8f, 1.2f, 0.4f, 0.8f, 3.2f, 1.1f, 1.1f, 0.8f, 1f, 1.8f, 0.4f, 0.9f, 1.1f, 0.4f, 0.95f, 2.95f, 1.6f, 1.3f, 1.4f, 2.8f, 1.1f, 1.4f, 1.5f, 6f };
                 break;
             default:
                 Debug.Log("Not A Valid Level Number!");
@@ -97,7 +112,21 @@ public class LevelManager : MonoBehaviour
         video.Pause();
 
         if (currentBlank == correctAnswers.Length) // The player completed the level 
+        {
             winPopupBox.SetActive(true); // Display the congratulatory message and ask the player what they want to do next
+
+            // Check the player's current progress
+            StreamReader read = new StreamReader(path);
+            int katasToShow = Int32.Parse(read.ReadLine());
+            read.Close();
+
+            if (katasToShow < levelNumber) // If the player just finished a kata they haven't done before, save their new progress
+            {
+                StreamWriter write = new StreamWriter(path);
+                write.WriteLine(levelNumber);
+                write.Close();
+            }
+        }
         else
         {
             steps[step].SetActive(false);
